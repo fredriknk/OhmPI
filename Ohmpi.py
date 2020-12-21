@@ -1,5 +1,6 @@
 """
 created on January 6, 2020
+Update on December 21, 2020
 Ohmpi.py is a program to control a low-cost and open hardward resistivity meter OhmPi that has been developed by Rémi CLEMENT(INRAE),Vivien DUBOIS(INRAE),Hélène GUYARD(IGE), Nicolas FORQUET (INRAE), and Yannick FARGIER (IFSTTAR).
 """
 print('OHMPI start' )
