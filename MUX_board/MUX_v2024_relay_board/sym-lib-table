@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name "relay_card")(type "Legacy")(uri "/home/su530201/KICAD_Projects/kicad-libs/relay_card.lib")(options "")(descr ""))
+  (lib (name "g5le-1-vd")(type "KiCad")(uri "${KIPRJMOD}/lib/g5le-1-vd.kicad_sym")(options "")(descr ""))
+  (lib (name "stp16nf06l")(type "KiCad")(uri "${KIPRJMOD}/lib/stp16nf06l.kicad_sym")(options "")(descr ""))
+  (lib (name "relay_card_single")(type "KiCad")(uri "${KIPRJMOD}/lib/symbols/relay_card_single.kicad_sym")(options "")(descr ""))
+)
