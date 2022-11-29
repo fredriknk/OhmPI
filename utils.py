@@ -1,5 +1,5 @@
 import io
-
+import adafruit_ads1x15.ads1115 as ads  # noqa
 
 def get_platform():
     """Gets platform name and checks if it is a raspberry pi
@@ -19,3 +19,6 @@ def get_platform():
     except FileNotFoundError:
         pass
     return platform, on_pi
+
+def get_batt_voltage():
+    pass
