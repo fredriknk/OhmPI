@@ -651,6 +651,26 @@ class OhmPi(object):
         shutil.rmtree('data')
         os.mkdir('data')
 
+    def reset_mux(self, cmd_id=None):
+        """Switches off all multiplexer relays.
+
+        Parameters
+        ----------
+        cmd_id : str, optional
+            Unique command identifier
+        """
+        if self.on_pi and self.use_mux:
+            roles = ['A', 'B', 'M', 'N']
+            for i in range(0, 4):
+                for j in range(1, self.max_elec + 1):
+                    self._switch_mux(j, 'off', roles[i])
+            self.exec_logger.debug('All MUX switched off.')
+        elif not self.on_pi:
+            self.exec_logger.warning('Cannot reset mux while in simulation mode...')
+        else:
+            self.exec_logger.warning('You cannot use the multiplexer because use_mux is set to False.'
+                                     ' Set use_mux to True to use the multiplexer...')
+
     def restart(self, cmd_id=None):
         """Restarts the Raspberry Pi
 
@@ -1299,6 +1319,21 @@ class OhmPi(object):
             if quadrupole[i] > 0:
                 self._switch_mux(quadrupole[i], 'off', roles[i])
 
+    def shutdown(self, cmd_id=None):
+        """Shuts the Raspberry Pi down
+
+        Parameters
+        ----------
+        cmd_id : str, optional
+            Unique command identifier
+        """
+
+        if self.on_pi:
+            self.exec_logger.info(f'Shutting down the pi following command {cmd_id}...')
+            os.system('reboot')
+        else:
+            self.exec_logger.warning('Not on Raspberry Pi, skipping shutdown...')
+
     def test_mux(self, activation_time=1.0, address=0x70):
         """Interactive method to test the multiplexer.
 
@@ -1348,25 +1383,6 @@ class OhmPi(object):
                 time.sleep(activation_time)
         print('Test finished.')
 
-    def reset_mux(self, cmd_id=None):
-        """Switches off all multiplexer relays.
-
-        Parameters
-        ----------
-        cmd_id : str, optional
-            Unique command identifier
-        """
-        if self.on_pi and self.use_mux:
-            roles = ['A', 'B', 'M', 'N']
-            for i in range(0, 4):
-                for j in range(1, self.max_elec + 1):
-                    self._switch_mux(j, 'off', roles[i])
-            self.exec_logger.debug('All MUX switched off.')
-        elif not self.on_pi:
-            self.exec_logger.warning('Cannot reset mux while in simulation mode...')
-        else:
-            self.exec_logger.warning('You cannot use the multiplexer because use_mux is set to False.'
-                                     ' Set use_mux to True to use the multiplexer...')
 
     def _update_acquisition_settings(self, config):
         warnings.warn('This function is deprecated, use update_settings() instead.', DeprecationWarning)
