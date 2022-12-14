@@ -1,4 +1,4 @@
-21012441192388743
+20970828819821214
 24LC02B
 Microchip-24LC02B_P-0
 
@@ -56650,202 +56650,6 @@ solder jumper open
 0
 5
 3
-KIGFA
-BATTERY_KEYSTONE_12mm
-
-
-0
-3
-2
-KIGFA
-C_0805
-Capacitor SMD 0805, reflow soldering, AVX (see smccp.pdf)
-capacitor 0805
-0
-2
-2
-KIGFA
-CuttingHole_0.5mm
-Mounting hole, Befestigungsbohrung, 3mm, No Annular, Kein Restring,
-Mounting hole, Befestigungsbohrung, 3mm, No Annular, Kein Restring,
-0
-1
-1
-KIGFA
-LED-0805
-LED 0805 smd package
-LED 0805 SMD
-0
-2
-2
-KIGFA
-MountingHole_3mm
-Mounting hole, Befestigungsbohrung, 3mm, No Annular, Kein Restring,
-Mounting hole, Befestigungsbohrung, 3mm, No Annular, Kein Restring,
-0
-1
-0
-KIGFA
-MountingHole_125mil
-Mounting hole, Befestigungsbohrung, 3,5mm, No Annular, Kein Restring,
-Mounting hole, Befestigungsbohrung, 3,5mm, No Annular, Kein Restring,
-0
-1
-1
-KIGFA
-Pin_Header_Angled_1x03
-Through hole pin header
-pin header
-0
-3
-3
-KIGFA
-Pin_Header_Straight_1x04
-Through hole pin header
-pin header
-0
-4
-4
-KIGFA
-Pin_Header_Straight_1x06
-Through hole pin header
-pin header
-0
-6
-6
-KIGFA
-Pin_Header_Straight_1x08
-Through hole pin header
-pin header
-0
-8
-8
-KIGFA
-Pin_Header_Straight_1x10
-Through hole pin header
-pin header
-0
-10
-10
-KIGFA
-R_0805
-Resistor SMD 0805, reflow soldering, Vishay (see dcrcw.pdf)
-resistor 0805
-0
-2
-2
-KIGFA
-R_1210
-Resistor SMD 1210, reflow soldering, Vishay (see dcrcw.pdf)
-resistor 1210
-0
-2
-2
-KIGFA
-R_Array_Convex_4x0603
-Chip Resistor Network, ROHM MNR14 (see mnr_g.pdf)
-resistor array
-0
-8
-8
-KIGFA
-Relay_SPDT_Omron-G5LE-1-VD
-Omron Relay SPDT, http://www.omron.com/ecb/products/pdf/en-g5le.pdf
-Omron Relay SPDT
-0
-4
-4
-KIGFA
-SC-70-5
-SC70-5 SOT323-5
-
-0
-5
-5
-KIGFA
-SOIC-8-N
-Module Narrow CMS SOJ 8 pins large
-CMS SOJ
-0
-8
-8
-KIGFA
-SOIC-16_3.9x9.9mm_Pitch1.27mm
-16-Lead Plastic Small Outline (SL) - Narrow, 3.90 mm Body [SOIC] (see Microchip Packaging Specification 00000049BS.pdf)
-SOIC 1.27
-0
-16
-16
-KIGFA
-SOIC-16_7.5x10.3mm_Pitch1.27mm
-16-Lead Plastic Small Outline (SO) - Wide, 7.50 mm Body [SOIC] (see Microchip Packaging Specification 00000049BS.pdf)
-SOIC 1.27
-0
-16
-16
-KIGFA
-SOT-223
-module CMS SOT223 4 pins
-CMS SOT
-0
-4
-4
-KIGFA
-Socket_Strip_Straight_2x03
-Through hole socket strip
-socket strip
-0
-6
-6
-KIGFA
-SolderWirePad_4x_OK
-
-
-0
-4
-4
-KIGFA
-TSSOP-20_4.4x6.5mm_Pitch0.65mm
-20-Lead Plastic Thin Shrink Small Outline (ST)-4.4 mm Body [TSSOP] (see Microchip Packaging Specification 00000049BS.pdf)
-SSOP 0.65
-0
-20
-20
-KIGFA
-VSSOP-8_3.0x3.0mm_Pitch0.65mm
-VSSOP-8 3.0 x 3.0, http://www.ti.com/lit/ds/symlink/lm75b.pdf
-VSSOP-8 3.0 x 3.0
-0
-8
-8
-KIGFA
-XTAL_ABRACON_ABS07
-
-
-0
-2
-2
-KIGFA
-led-P-LCC-4-3
->NAME
-
-0
-4
-4
-KIGFA
-microSD_socket
-microsd_socket
-
-0
-15
-14
-KIGFA
-small_no_jumper
-
-
-0
-2
-2
 LED_SMD
 LED-APA102-2020
 http://www.led-color.com/upload/201604/APA102-2020%20SMD%20LED.pdf
@@ -79442,6 +79246,20 @@ https://www.farnell.com/cad/316865.pdf?_ga=2.37208032.177107060.1530611323-24901
 0
 48
 48
+Solder_jumper
+C_0805
+Capacitor SMD 0805, reflow soldering, AVX (see smccp.pdf)
+capacitor 0805
+0
+2
+2
+Solder_jumper
+Soder_jumper
+
+
+0
+2
+2
 Symbol
 CE-Logo_8.5x6mm_SilkScreen
 CE marking
@@ -89389,3 +89207,10 @@ small_no_jumper
 0
 2
 2
+relay
+Relay_SPDT_Omron-G5LE-1-VD
+Omron Relay SPDT, http://www.omron.com/ecb/products/pdf/en-g5le.pdf
+Omron Relay SPDT
+0
+4
+4

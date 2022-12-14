@@ -62,11 +62,11 @@
       35,
       36
     ],
-    "visible_layers": "ffff5ff_ffffffff",
+    "visible_layers": "7ffffef_00000000",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "MUX_v2024_relay_board.kicad_prl",
+    "filename": "MUX_v2024_relay_board_32.kicad_prl",
     "version": 3
   },
   "project": {

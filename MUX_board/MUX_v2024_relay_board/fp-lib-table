@@ -1,4 +1,0 @@
-(fp_lib_table
-  (lib (name "KIGFA")(type "KiCad")(uri "${KIGFAFOOTPRINTS}")(options "")(descr ""))
-  (lib (name "kicad-gfa")(type "KiCad")(uri "/home/arnaud/.local/share/kicad/6.0/footprints/kicad-gfa.pretty")(options "")(descr ""))
-)
