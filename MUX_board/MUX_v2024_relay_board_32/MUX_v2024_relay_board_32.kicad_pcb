@@ -3726,7 +3726,7 @@
     (property "Sheetname" "sheet62994D62")
     (path "/4a9a14fb-338a-4e38-8d06-963212e4a475/00000000-0000-0000-0000-000062873f4c")
     (attr through_hole)
-    (fp_text reference "D30" (at 5.08 -2.47 90) (layer "F.SilkS")
+    (fp_text reference "D30" (at -2.42 0.03 180) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 8a22ddfa-0554-449c-b298-415317c9bf64)
     )
