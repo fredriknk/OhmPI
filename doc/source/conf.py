@@ -23,7 +23,7 @@ from shutil import copyfile
 # -- Project information -----------------------------------------------------
 
 project = 'OhmPi'
-copyright = '2022, INRAE, Team OhmPi'
+copyright = '2022, the OhmPi Team.'
 author = 'Rémi CLEMENT'
 
 # The full version, including alpha/beta/rc tags

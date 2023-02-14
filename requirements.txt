@@ -1,6 +1,6 @@
 RPi.GPIO
 adafruit-blinka
-adafruit-circuitpython-adsgit 1x15
+adafruit-circuitpython-ads1x15
 adafruit-circuitpython-tca9548a
 adafruit-circuitpython-mcp230xx
 minimalmodbus

@@ -1,5 +1,7 @@
 # OhmPi
 
+[![Build Status](https://gitlab.irstea.fr/%{project_path}/badges/%{default_branch}/pipeline.svg)](https://reversaal.gitlab.irstea.page/OhmPi)
+
 Development of a low-cost multi-electrodes resistivity meter for electrical resistivity mesaurement for lab applications, based on raspberry board
 
 ## Installation

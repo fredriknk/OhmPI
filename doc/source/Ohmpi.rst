@@ -16,7 +16,7 @@ OhmPi project
 | Rémi CLEMENT, Vivien DUBOIS, Nicolas Forquet, INRAE, REVERSAAL, Villeurbanne, France
 | Yannick FARGIER, GERS-RRO, Univ Gustave Eiffel, IFSTTAR, Lyon, France
 | Hélène GUYARD, IGE Grenoble, Université Grenoble Alpes, Grenoble, France
-| Olivier KAUFMANN, Arnaud WATELET, Université de Mons, Mons, Belgium
+| Olivier KAUFMANN, Arnaud WATLET, Université de Mons, Mons, Belgium
 | Guillaume BLANCHY, ILVO, Merelbeke, Belgium|
 
 
