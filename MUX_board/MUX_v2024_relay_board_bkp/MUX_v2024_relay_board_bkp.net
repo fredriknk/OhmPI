@@ -1,0 +1,3745 @@
+(export 
+  (version "E") 
+  (design 
+    (source "/home/su530201/KICAD_Projects/ohmpi-mux-test/MUX_BOARD/MUX_v10-2022//MUX_test.kicad_sch") 
+    (date "Wed 05 Oct 2022 17:49:10 CEST") 
+    (tool "Eeschema 6.0.7-f9a2dced07~116~ubuntu20.04.1") 
+    (sheet 
+      (number "1") 
+      (name "/") 
+      (tstamps "/") 
+      (title_block 
+        (title "MUX board V3.00") 
+        (company) 
+        (rev "01") 
+        (date "2022-10-05") 
+        (source "MUX_test.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "2") 
+      (name "/sheet62994D3F1/") 
+      (tstamps "/c0b28491-139d-42bf-b906-89137e90b7bc/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "3") 
+      (name "/sheet62994D47/") 
+      (tstamps "/507d6e4c-2b20-4720-80c7-335c567dfca9/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "4") 
+      (name "/sheet62994D4D1/") 
+      (tstamps "/a4cbf44a-c420-4cdc-b7ac-c4141e422837/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "5") 
+      (name "/sheet62994D55/") 
+      (tstamps "/cf3c41c6-5ce5-4542-aa8e-24b48e5c0c4b/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "6") 
+      (name "/sheet62994D3F/") 
+      (tstamps "/00000000-0000-0000-0000-000062994d3f/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "7") 
+      (name "/sheet62994D46/") 
+      (tstamps "/00000000-0000-0000-0000-000062994d46/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "8") 
+      (name "/sheet62994D4D/") 
+      (tstamps "/00000000-0000-0000-0000-000062994d4d/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "9") 
+      (name "/sheet62994D54/") 
+      (tstamps "/00000000-0000-0000-0000-000062994d54/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "10") 
+      (name "/sheet62994D3F2/") 
+      (tstamps "/ecb3b46c-46aa-435d-8e3e-b2b420cab342/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "11") 
+      (name "/sheet62994D48/") 
+      (tstamps "/61304c46-1748-4ca9-a650-75e7fc050a7a/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "12") 
+      (name "/sheet62994D4D2/") 
+      (tstamps "/248dc9f0-1f34-4418-81e2-7d1a9af430ed/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "13") 
+      (name "/sheet62994D56/") 
+      (tstamps "/160d7f53-0bed-43f8-a5cf-1c15d48972e7/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "14") 
+      (name "/sheet62994D3F3/") 
+      (tstamps "/7cabc5f0-0b9b-4dac-b2e3-718f9c843bf8/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "15") 
+      (name "/sheet62994D49/") 
+      (tstamps "/9ba7023d-5ca7-4f04-b4b5-338746a660a2/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "16") 
+      (name "/sheet62994D4D3/") 
+      (tstamps "/54cf8b74-d120-4918-8648-f2c9077f86d7/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value "")))) 
+    (sheet 
+      (number "17") 
+      (name "/sheet62994D57/") 
+      (tstamps "/e6d59d8b-052e-4f38-b060-c1c2c058bfcb/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "MUX_1_relay.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value ""))))) 
+  (components 
+    (comp 
+      (ref "J1") 
+      (value "Pwr Relays ") 
+      (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal") 
+      (libsource 
+        (lib "Connector") 
+        (part "Screw_Terminal_01x02") 
+        (description "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")) 
+      (property 
+        (name "Sheetname") 
+        (value "")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_test.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "ef1d72a3-54e6-4270-83f7-461bfc3792b6")) 
+    (comp 
+      (ref "J2") 
+      (value "A B M N") 
+      (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-4_1x04_P5.00mm_Horizontal") 
+      (libsource 
+        (lib "Connector") 
+        (part "Screw_Terminal_01x04") 
+        (description "Generic screw terminal, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")) 
+      (property 
+        (name "Sheetname") 
+        (value "")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_test.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "bea7af51-8bcf-42e4-87b1-46d802a1a17b")) 
+    (comp 
+      (ref "J3") 
+      (value "I2C") 
+      (footprint "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical") 
+      (libsource 
+        (lib "Connector_Generic") 
+        (part "Conn_02x03_Odd_Even") 
+        (description "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)")) 
+      (property 
+        (name "Sheetname") 
+        (value "")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_test.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "1ad152a7-cc8a-4381-a713-07fdd56789bf")) 
+    (comp 
+      (ref "J4") 
+      (value "Electrodes") 
+      (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-4_1x04_P5.00mm_Horizontal") 
+      (libsource 
+        (lib "") 
+        (part "Screw_Terminal_01x04_1") 
+        (description "Generic screw terminal, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")) 
+      (property 
+        (name "Sheetname") 
+        (value "")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_test.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "9f001d7c-de09-447f-a05e-824d43499478")) 
+    (comp 
+      (ref "JP1") 
+      (value "Write_Control") 
+      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical") 
+      (libsource 
+        (lib "Jumper") 
+        (part "Jumper_2_Open") 
+        (description "Jumper, 2-pole, open")) 
+      (property 
+        (name "Sheetname") 
+        (value "")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_test.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "e4c95c9e-8cca-4927-83b3-6b81a84f4eee")) 
+    (comp 
+      (ref "JP2") 
+      (value "Addr 2") 
+      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical") 
+      (libsource 
+        (lib "Jumper") 
+        (part "Jumper_3_Open") 
+        (description "Jumper, 3-pole, both open")) 
+      (property 
+        (name "Sheetname") 
+        (value "")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_test.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "4effe41b-a728-44f5-b16a-7c50f6e7f9d3")) 
+    (comp 
+      (ref "JP3") 
+      (value "Addr 1") 
+      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical") 
+      (libsource 
+        (lib "Jumper") 
+        (part "Jumper_3_Open") 
+        (description "Jumper, 3-pole, both open")) 
+      (property 
+        (name "Sheetname") 
+        (value "")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_test.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "92c95f66-85f6-46ad-a00b-29a71b53cb9e")) 
+    (comp 
+      (ref "JP4") 
+      (value "Addr 0") 
+      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical") 
+      (libsource 
+        (lib "Jumper") 
+        (part "Jumper_3_Open") 
+        (description "Jumper, 3-pole, both open")) 
+      (property 
+        (name "Sheetname") 
+        (value "")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_test.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "60eba62a-ec42-497a-821f-baeefe0a6518")) 
+    (comp 
+      (ref "U1") 
+      (value "M24C02-FMN") 
+      (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm") 
+      (datasheet "http://www.st.com/content/ccc/resource/technical/document/datasheet/b0/d8/50/40/5a/85/49/6f/DM00071904.pdf/files/DM00071904.pdf/jcr:content/translations/en.DM00071904.pdf") 
+      (libsource 
+        (lib "Memory_EEPROM") 
+        (part "M24C02-FMN") 
+        (description "2Kb (256x8) I2C Serial EEPROM, 1.6-5.5V, SOIC-8")) 
+      (property 
+        (name "Sheetname") 
+        (value "")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_test.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "691049a3-9b0a-41f1-b08a-d3a6a0ae267f")) 
+    (comp 
+      (ref "U2") 
+      (value "MCP23017_SP") 
+      (footprint "Package_DIP:DIP-28_W7.62mm") 
+      (datasheet "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf") 
+      (libsource 
+        (lib "Interface_Expansion") 
+        (part "MCP23017_SP") 
+        (description "16-bit I/O expander, I2C, interrupts, w pull-ups, SPDIP-28")) 
+      (property 
+        (name "Sheetname") 
+        (value "")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_test.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "f280e339-5643-47d1-a20c-a945da999f60")) 
+    (comp 
+      (ref "D1") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F1")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F1/") 
+        (tstamps "/c0b28491-139d-42bf-b906-89137e90b7bc/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K1") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F1")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F1/") 
+        (tstamps "/c0b28491-139d-42bf-b906-89137e90b7bc/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q1") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F1")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F1/") 
+        (tstamps "/c0b28491-139d-42bf-b906-89137e90b7bc/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R1") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F1")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F1/") 
+        (tstamps "/c0b28491-139d-42bf-b906-89137e90b7bc/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D2") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D47")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D47/") 
+        (tstamps "/507d6e4c-2b20-4720-80c7-335c567dfca9/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K2") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D47")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D47/") 
+        (tstamps "/507d6e4c-2b20-4720-80c7-335c567dfca9/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q2") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D47")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D47/") 
+        (tstamps "/507d6e4c-2b20-4720-80c7-335c567dfca9/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R2") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D47")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D47/") 
+        (tstamps "/507d6e4c-2b20-4720-80c7-335c567dfca9/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D3") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D1")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D1/") 
+        (tstamps "/a4cbf44a-c420-4cdc-b7ac-c4141e422837/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K3") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D1")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D1/") 
+        (tstamps "/a4cbf44a-c420-4cdc-b7ac-c4141e422837/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q3") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D1")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D1/") 
+        (tstamps "/a4cbf44a-c420-4cdc-b7ac-c4141e422837/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R3") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D1")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D1/") 
+        (tstamps "/a4cbf44a-c420-4cdc-b7ac-c4141e422837/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D4") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D55")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D55/") 
+        (tstamps "/cf3c41c6-5ce5-4542-aa8e-24b48e5c0c4b/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K4") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D55")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D55/") 
+        (tstamps "/cf3c41c6-5ce5-4542-aa8e-24b48e5c0c4b/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q4") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D55")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D55/") 
+        (tstamps "/cf3c41c6-5ce5-4542-aa8e-24b48e5c0c4b/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R4") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D55")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D55/") 
+        (tstamps "/cf3c41c6-5ce5-4542-aa8e-24b48e5c0c4b/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D5") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d3f/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K5") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d3f/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q5") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d3f/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R5") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d3f/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D6") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D46")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D46/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d46/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K6") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D46")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D46/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d46/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q6") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D46")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D46/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d46/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R6") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D46")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D46/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d46/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D7") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d4d/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K7") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d4d/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q7") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d4d/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R7") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d4d/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D8") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D54")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D54/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d54/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K8") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D54")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D54/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d54/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q8") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D54")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D54/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d54/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R8") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D54")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D54/") 
+        (tstamps "/00000000-0000-0000-0000-000062994d54/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D9") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F2")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F2/") 
+        (tstamps "/ecb3b46c-46aa-435d-8e3e-b2b420cab342/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K9") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F2")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F2/") 
+        (tstamps "/ecb3b46c-46aa-435d-8e3e-b2b420cab342/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q9") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F2")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F2/") 
+        (tstamps "/ecb3b46c-46aa-435d-8e3e-b2b420cab342/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R9") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F2")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F2/") 
+        (tstamps "/ecb3b46c-46aa-435d-8e3e-b2b420cab342/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D10") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D48")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D48/") 
+        (tstamps "/61304c46-1748-4ca9-a650-75e7fc050a7a/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K10") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D48")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D48/") 
+        (tstamps "/61304c46-1748-4ca9-a650-75e7fc050a7a/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q10") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D48")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D48/") 
+        (tstamps "/61304c46-1748-4ca9-a650-75e7fc050a7a/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R10") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D48")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D48/") 
+        (tstamps "/61304c46-1748-4ca9-a650-75e7fc050a7a/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D11") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D2")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D2/") 
+        (tstamps "/248dc9f0-1f34-4418-81e2-7d1a9af430ed/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K11") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D2")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D2/") 
+        (tstamps "/248dc9f0-1f34-4418-81e2-7d1a9af430ed/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q11") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D2")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D2/") 
+        (tstamps "/248dc9f0-1f34-4418-81e2-7d1a9af430ed/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R11") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D2")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D2/") 
+        (tstamps "/248dc9f0-1f34-4418-81e2-7d1a9af430ed/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D12") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D56")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D56/") 
+        (tstamps "/160d7f53-0bed-43f8-a5cf-1c15d48972e7/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K12") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D56")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D56/") 
+        (tstamps "/160d7f53-0bed-43f8-a5cf-1c15d48972e7/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q12") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D56")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D56/") 
+        (tstamps "/160d7f53-0bed-43f8-a5cf-1c15d48972e7/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R12") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D56")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D56/") 
+        (tstamps "/160d7f53-0bed-43f8-a5cf-1c15d48972e7/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D13") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F3")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F3/") 
+        (tstamps "/7cabc5f0-0b9b-4dac-b2e3-718f9c843bf8/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K13") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F3")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F3/") 
+        (tstamps "/7cabc5f0-0b9b-4dac-b2e3-718f9c843bf8/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q13") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F3")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F3/") 
+        (tstamps "/7cabc5f0-0b9b-4dac-b2e3-718f9c843bf8/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R13") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D3F3")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D3F3/") 
+        (tstamps "/7cabc5f0-0b9b-4dac-b2e3-718f9c843bf8/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D14") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D49")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D49/") 
+        (tstamps "/9ba7023d-5ca7-4f04-b4b5-338746a660a2/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K14") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D49")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D49/") 
+        (tstamps "/9ba7023d-5ca7-4f04-b4b5-338746a660a2/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q14") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D49")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D49/") 
+        (tstamps "/9ba7023d-5ca7-4f04-b4b5-338746a660a2/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R14") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D49")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D49/") 
+        (tstamps "/9ba7023d-5ca7-4f04-b4b5-338746a660a2/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D15") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D3")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D3/") 
+        (tstamps "/54cf8b74-d120-4918-8648-f2c9077f86d7/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K15") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D3")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D3/") 
+        (tstamps "/54cf8b74-d120-4918-8648-f2c9077f86d7/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q15") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D3")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D3/") 
+        (tstamps "/54cf8b74-d120-4918-8648-f2c9077f86d7/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R15") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D4D3")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D4D3/") 
+        (tstamps "/54cf8b74-d120-4918-8648-f2c9077f86d7/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020")) 
+    (comp 
+      (ref "D16") 
+      (value "1N4007") 
+      (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+      (datasheet "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (libsource 
+        (lib "Diode") 
+        (part "1N4007") 
+        (description "1000V 1A General Purpose Rectifier Diode, DO-41")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D57")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D57/") 
+        (tstamps "/e6d59d8b-052e-4f38-b060-c1c2c058bfcb/")) 
+      (tstamps "00000000-0000-0000-0000-000062873f4c")) 
+    (comp 
+      (ref "K16") 
+      (value "G5LE-1-VD") 
+      (footprint "KIGFA:Relay_SPDT_Omron-G5LE-1-VD") 
+      (datasheet "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (libsource 
+        (lib "relay_card") 
+        (part "G5LE-1-VD") 
+        (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D57")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D57/") 
+        (tstamps "/e6d59d8b-052e-4f38-b060-c1c2c058bfcb/")) 
+      (tstamps "00000000-0000-0000-0000-00006298272a")) 
+    (comp 
+      (ref "Q16") 
+      (value "ZVN4206A") 
+      (footprint "Package_TO_SOT_THT:TO-92Flat") 
+      (datasheet "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (libsource 
+        (lib "relay_card") 
+        (part "ZVN4206A") 
+        (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D57")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D57/") 
+        (tstamps "/e6d59d8b-052e-4f38-b060-c1c2c058bfcb/")) 
+      (tstamps "00000000-0000-0000-0000-0000629874ba")) 
+    (comp 
+      (ref "R16") 
+      (value "100k") 
+      (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal") 
+      (libsource 
+        (lib "Device") 
+        (part "R") 
+        (description "Resistor")) 
+      (property 
+        (name "Sheetname") 
+        (value "sheet62994D57")) 
+      (property 
+        (name "Sheetfile") 
+        (value "MUX_1_relay.kicad_sch")) 
+      (sheetpath 
+        (names "/sheet62994D57/") 
+        (tstamps "/e6d59d8b-052e-4f38-b060-c1c2c058bfcb/")) 
+      (tstamps "00000000-0000-0000-0000-00006287a020"))) 
+  (libparts 
+    (libpart 
+      (lib "") 
+      (part "Screw_Terminal_01x04_1") 
+      (description "Generic screw terminal, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)") 
+      (docs "~") 
+      (footprints 
+        (fp "TerminalBlock*:*")) 
+      (fields 
+        (field 
+          (name "Reference") "J") 
+        (field 
+          (name "Value") "Screw_Terminal_01x04_1") 
+        (field 
+          (name "Datasheet") "~")) 
+      (pins 
+        (pin 
+          (num "1") 
+          (name "Pin_1") 
+          (type "passive")) 
+        (pin 
+          (num "2") 
+          (name "Pin_2") 
+          (type "passive")) 
+        (pin 
+          (num "3") 
+          (name "Pin_3") 
+          (type "passive")) 
+        (pin 
+          (num "4") 
+          (name "Pin_4") 
+          (type "passive")))) 
+    (libpart 
+      (lib "Connector") 
+      (part "Screw_Terminal_01x02") 
+      (description "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)") 
+      (docs "~") 
+      (footprints 
+        (fp "TerminalBlock*:*")) 
+      (fields 
+        (field 
+          (name "Reference") "J?") 
+        (field 
+          (name "Value") "Screw_Terminal_01x02") 
+        (field 
+          (name "Datasheet") "~")) 
+      (pins 
+        (pin 
+          (num "12V") 
+          (name "Pin_1") 
+          (type "passive")) 
+        (pin 
+          (num "GND") 
+          (name "Pin_2") 
+          (type "passive")))) 
+    (libpart 
+      (lib "Connector") 
+      (part "Screw_Terminal_01x04") 
+      (description "Generic screw terminal, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)") 
+      (docs "~") 
+      (footprints 
+        (fp "TerminalBlock*:*")) 
+      (fields 
+        (field 
+          (name "Reference") "J?") 
+        (field 
+          (name "Value") "Screw_Terminal_01x04") 
+        (field 
+          (name "Datasheet") "~")) 
+      (pins 
+        (pin 
+          (num "A") 
+          (name "Pin_4") 
+          (type "passive")) 
+        (pin 
+          (num "B") 
+          (name "Pin_3") 
+          (type "passive")) 
+        (pin 
+          (num "M") 
+          (name "Pin_2") 
+          (type "passive")) 
+        (pin 
+          (num "N") 
+          (name "Pin_1") 
+          (type "passive")))) 
+    (libpart 
+      (lib "Connector_Generic") 
+      (part "Conn_02x03_Odd_Even") 
+      (description "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)") 
+      (docs "~") 
+      (footprints 
+        (fp "Connector*:*_2x??_*")) 
+      (fields 
+        (field 
+          (name "Reference") "J") 
+        (field 
+          (name "Value") "Conn_02x03_Odd_Even") 
+        (field 
+          (name "Datasheet") "~")) 
+      (pins 
+        (pin 
+          (num "1") 
+          (name "Pin_1") 
+          (type "passive")) 
+        (pin 
+          (num "2") 
+          (name "Pin_2") 
+          (type "passive")) 
+        (pin 
+          (num "3") 
+          (name "Pin_3") 
+          (type "passive")) 
+        (pin 
+          (num "4") 
+          (name "Pin_4") 
+          (type "passive")) 
+        (pin 
+          (num "5") 
+          (name "Pin_5") 
+          (type "passive")) 
+        (pin 
+          (num "6") 
+          (name "Pin_6") 
+          (type "passive")))) 
+    (libpart 
+      (lib "Device") 
+      (part "R") 
+      (description "Resistor") 
+      (docs "~") 
+      (footprints 
+        (fp "R_*")) 
+      (fields 
+        (field 
+          (name "Reference") "R") 
+        (field 
+          (name "Value") "R") 
+        (field 
+          (name "Datasheet") "~")) 
+      (pins 
+        (pin 
+          (num "1") 
+          (name "") 
+          (type "passive")) 
+        (pin 
+          (num "2") 
+          (name "") 
+          (type "passive")))) 
+    (libpart 
+      (lib "Diode") 
+      (part "1N4007") 
+      (description "1000V 1A General Purpose Rectifier Diode, DO-41") 
+      (docs "http://www.vishay.com/docs/88503/1n4001.pdf") 
+      (footprints 
+        (fp "D*DO?41*")) 
+      (fields 
+        (field 
+          (name "Reference") "D") 
+        (field 
+          (name "Value") "1N4007") 
+        (field 
+          (name "Footprint") "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal") 
+        (field 
+          (name "Datasheet") "http://www.vishay.com/docs/88503/1n4001.pdf")) 
+      (pins 
+        (pin 
+          (num "1") 
+          (name "K") 
+          (type "passive")) 
+        (pin 
+          (num "2") 
+          (name "A") 
+          (type "passive")))) 
+    (libpart 
+      (lib "Interface_Expansion") 
+      (part "MCP23017_SP") 
+      (description "16-bit I/O expander, I2C, interrupts, w pull-ups, SPDIP-28") 
+      (docs "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf") 
+      (footprints 
+        (fp "DIP*W7.62mm*")) 
+      (fields 
+        (field 
+          (name "Reference") "U") 
+        (field 
+          (name "Value") "MCP23017_SP") 
+        (field 
+          (name "Footprint") "Package_DIP:DIP-28_W7.62mm") 
+        (field 
+          (name "Datasheet") "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf")) 
+      (pins 
+        (pin 
+          (num "1") 
+          (name "GPB0") 
+          (type "bidirectional")) 
+        (pin 
+          (num "2") 
+          (name "GPB1") 
+          (type "bidirectional")) 
+        (pin 
+          (num "3") 
+          (name "GPB2") 
+          (type "bidirectional")) 
+        (pin 
+          (num "4") 
+          (name "GPB3") 
+          (type "bidirectional")) 
+        (pin 
+          (num "5") 
+          (name "GPB4") 
+          (type "bidirectional")) 
+        (pin 
+          (num "6") 
+          (name "GPB5") 
+          (type "bidirectional")) 
+        (pin 
+          (num "7") 
+          (name "GPB6") 
+          (type "bidirectional")) 
+        (pin 
+          (num "8") 
+          (name "GPB7") 
+          (type "bidirectional")) 
+        (pin 
+          (num "9") 
+          (name "VDD") 
+          (type "power_in")) 
+        (pin 
+          (num "10") 
+          (name "VSS") 
+          (type "power_in")) 
+        (pin 
+          (num "11") 
+          (name "NC") 
+          (type "no_connect")) 
+        (pin 
+          (num "12") 
+          (name "SCK") 
+          (type "input")) 
+        (pin 
+          (num "13") 
+          (name "SDA") 
+          (type "bidirectional")) 
+        (pin 
+          (num "14") 
+          (name "NC") 
+          (type "no_connect")) 
+        (pin 
+          (num "15") 
+          (name "A0") 
+          (type "input")) 
+        (pin 
+          (num "16") 
+          (name "A1") 
+          (type "input")) 
+        (pin 
+          (num "17") 
+          (name "A2") 
+          (type "input")) 
+        (pin 
+          (num "18") 
+          (name "~{RESET}") 
+          (type "input")) 
+        (pin 
+          (num "19") 
+          (name "INTB") 
+          (type "tri_state")) 
+        (pin 
+          (num "20") 
+          (name "INTA") 
+          (type "tri_state")) 
+        (pin 
+          (num "21") 
+          (name "GPA0") 
+          (type "bidirectional")) 
+        (pin 
+          (num "22") 
+          (name "GPA1") 
+          (type "bidirectional")) 
+        (pin 
+          (num "23") 
+          (name "GPA2") 
+          (type "bidirectional")) 
+        (pin 
+          (num "24") 
+          (name "GPA3") 
+          (type "bidirectional")) 
+        (pin 
+          (num "25") 
+          (name "GPA4") 
+          (type "bidirectional")) 
+        (pin 
+          (num "26") 
+          (name "GPA5") 
+          (type "bidirectional")) 
+        (pin 
+          (num "27") 
+          (name "GPA6") 
+          (type "bidirectional")) 
+        (pin 
+          (num "28") 
+          (name "GPA7") 
+          (type "bidirectional")))) 
+    (libpart 
+      (lib "Jumper") 
+      (part "Jumper_2_Open") 
+      (description "Jumper, 2-pole, open") 
+      (docs "~") 
+      (footprints 
+        (fp "Jumper*") 
+        (fp "TestPoint*2Pads*") 
+        (fp "TestPoint*Bridge*")) 
+      (fields 
+        (field 
+          (name "Reference") "JP") 
+        (field 
+          (name "Value") "Jumper_2_Open") 
+        (field 
+          (name "Datasheet") "~")) 
+      (pins 
+        (pin 
+          (num "1") 
+          (name "A") 
+          (type "passive")) 
+        (pin 
+          (num "2") 
+          (name "B") 
+          (type "passive")))) 
+    (libpart 
+      (lib "Jumper") 
+      (part "Jumper_3_Open") 
+      (description "Jumper, 3-pole, both open") 
+      (docs "~") 
+      (footprints 
+        (fp "Jumper*") 
+        (fp "TestPoint*3Pads*") 
+        (fp "TestPoint*Bridge*")) 
+      (fields 
+        (field 
+          (name "Reference") "JP") 
+        (field 
+          (name "Value") "Jumper_3_Open") 
+        (field 
+          (name "Datasheet") "~")) 
+      (pins 
+        (pin 
+          (num "1") 
+          (name "A") 
+          (type "passive")) 
+        (pin 
+          (num "2") 
+          (name "C") 
+          (type "passive")) 
+        (pin 
+          (num "3") 
+          (name "B") 
+          (type "passive")))) 
+    (libpart 
+      (lib "Memory_EEPROM") 
+      (part "M24C02-FMN") 
+      (description "2Kb (256x8) I2C Serial EEPROM, 1.6-5.5V, SOIC-8") 
+      (docs "http://www.st.com/content/ccc/resource/technical/document/datasheet/b0/d8/50/40/5a/85/49/6f/DM00071904.pdf/files/DM00071904.pdf/jcr:content/translations/en.DM00071904.pdf") 
+      (footprints 
+        (fp "SOIC*3.9x4.9mm*P1.27mm*")) 
+      (fields 
+        (field 
+          (name "Reference") "U") 
+        (field 
+          (name "Value") "M24C02-FMN") 
+        (field 
+          (name "Footprint") "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm") 
+        (field 
+          (name "Datasheet") "http://www.st.com/content/ccc/resource/technical/document/datasheet/b0/d8/50/40/5a/85/49/6f/DM00071904.pdf/files/DM00071904.pdf/jcr:content/translations/en.DM00071904.pdf")) 
+      (pins 
+        (pin 
+          (num "1") 
+          (name "E0") 
+          (type "input")) 
+        (pin 
+          (num "2") 
+          (name "E1") 
+          (type "input")) 
+        (pin 
+          (num "3") 
+          (name "E2") 
+          (type "input")) 
+        (pin 
+          (num "4") 
+          (name "VSS") 
+          (type "power_in")) 
+        (pin 
+          (num "5") 
+          (name "SDA") 
+          (type "bidirectional")) 
+        (pin 
+          (num "6") 
+          (name "SCL") 
+          (type "input")) 
+        (pin 
+          (num "7") 
+          (name "~{WC}") 
+          (type "input")) 
+        (pin 
+          (num "8") 
+          (name "VCC") 
+          (type "power_in")))) 
+    (libpart 
+      (lib "relay_card") 
+      (part "G5LE-1-VD") 
+      (description "Omron G5LE relay, Miniature Single Pole, SPDT, 10A") 
+      (docs "http://www.omron.com/ecb/products/pdf/en-g5le.pdf") 
+      (footprints 
+        (fp "Relay*SPDT*Omron*G5LE?1*")) 
+      (fields 
+        (field 
+          (name "Reference") "K") 
+        (field 
+          (name "Value") "G5LE-1-VD") 
+        (field 
+          (name "Footprint") "Relay_THT:Relay_SPST_Omron-G5LE-1-VD") 
+        (field 
+          (name "Datasheet") "http://www.omron.com/ecb/products/pdf/en-g5le.pdf")) 
+      (pins 
+        (pin 
+          (num "1") 
+          (name "") 
+          (type "passive")) 
+        (pin 
+          (num "2") 
+          (name "") 
+          (type "passive")) 
+        (pin 
+          (num "3") 
+          (name "") 
+          (type "passive")) 
+        (pin 
+          (num "5") 
+          (name "") 
+          (type "passive")))) 
+    (libpart 
+      (lib "relay_card") 
+      (part "ZVN4206A") 
+      (description "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23") 
+      (docs "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF") 
+      (footprints 
+        (fp "SOT?23*")) 
+      (fields 
+        (field 
+          (name "Reference") "Q") 
+        (field 
+          (name "Value") "ZVN4206A") 
+        (field 
+          (name "Footprint") "Package_TO_SOT_SMD:SOT-23") 
+        (field 
+          (name "Datasheet") "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF")) 
+      (pins 
+        (pin 
+          (num "1") 
+          (name "G") 
+          (type "input")) 
+        (pin 
+          (num "2") 
+          (name "S") 
+          (type "passive")) 
+        (pin 
+          (num "3") 
+          (name "D") 
+          (type "passive"))))) 
+  (libraries 
+    (library 
+      (logical "Connector") 
+      (uri "/usr/share/kicad/symbols//Connector.kicad_sym")) 
+    (library 
+      (logical "Connector_Generic") 
+      (uri "/usr/share/kicad/symbols//Connector_Generic.kicad_sym")) 
+    (library 
+      (logical "Device") 
+      (uri "/usr/share/kicad/symbols//Device.kicad_sym")) 
+    (library 
+      (logical "Diode") 
+      (uri "/usr/share/kicad/symbols//Diode.kicad_sym")) 
+    (library 
+      (logical "Interface_Expansion") 
+      (uri "/usr/share/kicad/symbols//Interface_Expansion.kicad_sym")) 
+    (library 
+      (logical "Jumper") 
+      (uri "/usr/share/kicad/symbols//Jumper.kicad_sym")) 
+    (library 
+      (logical "Memory_EEPROM") 
+      (uri "/usr/share/kicad/symbols//Memory_EEPROM.kicad_sym")) 
+    (library 
+      (logical "relay_card") 
+      (uri "/home/su530201/KICAD_Projects/kicad-libs/relay_card.lib"))) 
+  (nets 
+    (net 
+      (code "1") 
+      (name "+3.3V") 
+      (node 
+        (ref "J3") 
+        (pin "6") 
+        (pinfunction "Pin_6") 
+        (pintype "passive")) 
+      (node 
+        (ref "JP2") 
+        (pin "3") 
+        (pinfunction "B") 
+        (pintype "passive")) 
+      (node 
+        (ref "JP3") 
+        (pin "3") 
+        (pinfunction "B") 
+        (pintype "passive")) 
+      (node 
+        (ref "JP4") 
+        (pin "3") 
+        (pinfunction "B") 
+        (pintype "passive")) 
+      (node 
+        (ref "U1") 
+        (pin "8") 
+        (pinfunction "VCC") 
+        (pintype "power_in")) 
+      (node 
+        (ref "U2") 
+        (pin "9") 
+        (pinfunction "VDD") 
+        (pintype "power_in"))) 
+    (net 
+      (code "2") 
+      (name "/DI1") 
+      (node 
+        (ref "Q12") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q16") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q4") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q8") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "R12") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R16") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R4") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R8") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "U2") 
+        (pin "1") 
+        (pinfunction "GPB0") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "21") 
+        (pinfunction "GPA0") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "25") 
+        (pinfunction "GPA4") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "5") 
+        (pinfunction "GPB4") 
+        (pintype "bidirectional"))) 
+    (net 
+      (code "3") 
+      (name "/DI2") 
+      (node 
+        (ref "Q11") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q15") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q3") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q7") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "R11") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R15") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R3") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R7") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "U2") 
+        (pin "2") 
+        (pinfunction "GPB1") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "22") 
+        (pinfunction "GPA1") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "26") 
+        (pinfunction "GPA5") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "6") 
+        (pinfunction "GPB5") 
+        (pintype "bidirectional"))) 
+    (net 
+      (code "4") 
+      (name "/DI3") 
+      (node 
+        (ref "Q10") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q14") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q2") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q6") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "R10") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R14") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R2") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R6") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "U2") 
+        (pin "23") 
+        (pinfunction "GPA2") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "27") 
+        (pinfunction "GPA6") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "3") 
+        (pinfunction "GPB2") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "7") 
+        (pinfunction "GPB6") 
+        (pintype "bidirectional"))) 
+    (net 
+      (code "5") 
+      (name "/DI4") 
+      (node 
+        (ref "Q1") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q13") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q5") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "Q9") 
+        (pin "1") 
+        (pinfunction "G") 
+        (pintype "input")) 
+      (node 
+        (ref "R1") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R13") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R5") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "R9") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "U2") 
+        (pin "24") 
+        (pinfunction "GPA3") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "28") 
+        (pinfunction "GPA7") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "4") 
+        (pinfunction "GPB3") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "8") 
+        (pinfunction "GPB7") 
+        (pintype "bidirectional"))) 
+    (net 
+      (code "6") 
+      (name "/E1") 
+      (node 
+        (ref "J4") 
+        (pin "1") 
+        (pinfunction "Pin_1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K12") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K16") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K4") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K8") 
+        (pin "3") 
+        (pintype "passive"))) 
+    (net 
+      (code "7") 
+      (name "/E2") 
+      (node 
+        (ref "J4") 
+        (pin "2") 
+        (pinfunction "Pin_2") 
+        (pintype "passive")) 
+      (node 
+        (ref "K11") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K15") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K3") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K7") 
+        (pin "3") 
+        (pintype "passive"))) 
+    (net 
+      (code "8") 
+      (name "/E3") 
+      (node 
+        (ref "J4") 
+        (pin "3") 
+        (pinfunction "Pin_3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K10") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K14") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K2") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K6") 
+        (pin "3") 
+        (pintype "passive"))) 
+    (net 
+      (code "9") 
+      (name "/E4") 
+      (node 
+        (ref "J4") 
+        (pin "4") 
+        (pinfunction "Pin_4") 
+        (pintype "passive")) 
+      (node 
+        (ref "K1") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K13") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K5") 
+        (pin "3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K9") 
+        (pin "3") 
+        (pintype "passive"))) 
+    (net 
+      (code "10") 
+      (name "/sheet62994D3F/GND") 
+      (node 
+        (ref "J1") 
+        (pin "GND") 
+        (pinfunction "Pin_2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q1") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q10") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q11") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q12") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q13") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q14") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q15") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q16") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q2") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q3") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q4") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q5") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q6") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q7") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q8") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q9") 
+        (pin "3") 
+        (pinfunction "D") 
+        (pintype "passive")) 
+      (node 
+        (ref "R1") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R10") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R11") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R12") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R13") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R14") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R15") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R16") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R2") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R3") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R4") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R5") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R6") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R7") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R8") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "R9") 
+        (pin "2") 
+        (pintype "passive"))) 
+    (net 
+      (code "11") 
+      (name "/sheet62994D3F/Role") 
+      (node 
+        (ref "J2") 
+        (pin "A") 
+        (pinfunction "Pin_4") 
+        (pintype "passive")) 
+      (node 
+        (ref "K5") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K6") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K7") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K8") 
+        (pin "1") 
+        (pintype "passive"))) 
+    (net 
+      (code "12") 
+      (name "/sheet62994D3F/VCC") 
+      (node 
+        (ref "D1") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D10") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D11") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D12") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D13") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D14") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D15") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D16") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D2") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D3") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D4") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D5") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D6") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D7") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D8") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "D9") 
+        (pin "1") 
+        (pinfunction "K") 
+        (pintype "passive")) 
+      (node 
+        (ref "J1") 
+        (pin "12V") 
+        (pinfunction "Pin_1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K1") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K10") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K11") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K12") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K13") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K14") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K15") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K16") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K2") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K3") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K4") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K5") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K6") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K7") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K8") 
+        (pin "5") 
+        (pintype "passive")) 
+      (node 
+        (ref "K9") 
+        (pin "5") 
+        (pintype "passive"))) 
+    (net 
+      (code "13") 
+      (name "/sheet62994D3F1/Role") 
+      (node 
+        (ref "J2") 
+        (pin "B") 
+        (pinfunction "Pin_3") 
+        (pintype "passive")) 
+      (node 
+        (ref "K1") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K2") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K3") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K4") 
+        (pin "1") 
+        (pintype "passive"))) 
+    (net 
+      (code "14") 
+      (name "/sheet62994D3F2/Role") 
+      (node 
+        (ref "J2") 
+        (pin "N") 
+        (pinfunction "Pin_1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K10") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K11") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K12") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K9") 
+        (pin "1") 
+        (pintype "passive"))) 
+    (net 
+      (code "15") 
+      (name "/sheet62994D3F3/Role") 
+      (node 
+        (ref "J2") 
+        (pin "M") 
+        (pinfunction "Pin_2") 
+        (pintype "passive")) 
+      (node 
+        (ref "K13") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K14") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K15") 
+        (pin "1") 
+        (pintype "passive")) 
+      (node 
+        (ref "K16") 
+        (pin "1") 
+        (pintype "passive"))) 
+    (net 
+      (code "16") 
+      (name "GNDD") 
+      (node 
+        (ref "J3") 
+        (pin "5") 
+        (pinfunction "Pin_5") 
+        (pintype "passive")) 
+      (node 
+        (ref "JP1") 
+        (pin "1") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "JP2") 
+        (pin "1") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "JP3") 
+        (pin "1") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "JP4") 
+        (pin "1") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "U1") 
+        (pin "4") 
+        (pinfunction "VSS") 
+        (pintype "power_in")) 
+      (node 
+        (ref "U2") 
+        (pin "10") 
+        (pinfunction "VSS") 
+        (pintype "power_in"))) 
+    (net 
+      (code "17") 
+      (name "Net-(D1-Pad2)") 
+      (node 
+        (ref "D1") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K1") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q1") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "18") 
+      (name "Net-(D2-Pad2)") 
+      (node 
+        (ref "D2") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K2") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q2") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "19") 
+      (name "Net-(D3-Pad2)") 
+      (node 
+        (ref "D3") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K3") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q3") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "20") 
+      (name "Net-(D4-Pad2)") 
+      (node 
+        (ref "D4") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K4") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q4") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "21") 
+      (name "Net-(D5-Pad2)") 
+      (node 
+        (ref "D5") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K5") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q5") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "22") 
+      (name "Net-(D6-Pad2)") 
+      (node 
+        (ref "D6") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K6") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q6") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "23") 
+      (name "Net-(D7-Pad2)") 
+      (node 
+        (ref "D7") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K7") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q7") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "24") 
+      (name "Net-(D8-Pad2)") 
+      (node 
+        (ref "D8") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K8") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q8") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "25") 
+      (name "Net-(D9-Pad2)") 
+      (node 
+        (ref "D9") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K9") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q9") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "26") 
+      (name "Net-(D10-Pad2)") 
+      (node 
+        (ref "D10") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K10") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q10") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "27") 
+      (name "Net-(D11-Pad2)") 
+      (node 
+        (ref "D11") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K11") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q11") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "28") 
+      (name "Net-(D12-Pad2)") 
+      (node 
+        (ref "D12") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K12") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q12") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "29") 
+      (name "Net-(D13-Pad2)") 
+      (node 
+        (ref "D13") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K13") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q13") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "30") 
+      (name "Net-(D14-Pad2)") 
+      (node 
+        (ref "D14") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K14") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q14") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "31") 
+      (name "Net-(D15-Pad2)") 
+      (node 
+        (ref "D15") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K15") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q15") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "32") 
+      (name "Net-(D16-Pad2)") 
+      (node 
+        (ref "D16") 
+        (pin "2") 
+        (pinfunction "A") 
+        (pintype "passive")) 
+      (node 
+        (ref "K16") 
+        (pin "2") 
+        (pintype "passive")) 
+      (node 
+        (ref "Q16") 
+        (pin "2") 
+        (pinfunction "S") 
+        (pintype "passive"))) 
+    (net 
+      (code "33") 
+      (name "Net-(J3-Pad1)") 
+      (node 
+        (ref "J3") 
+        (pin "1") 
+        (pinfunction "Pin_1") 
+        (pintype "passive")) 
+      (node 
+        (ref "U1") 
+        (pin "6") 
+        (pinfunction "SCL") 
+        (pintype "input")) 
+      (node 
+        (ref "U2") 
+        (pin "12") 
+        (pinfunction "SCK") 
+        (pintype "input"))) 
+    (net 
+      (code "34") 
+      (name "Net-(J3-Pad3)") 
+      (node 
+        (ref "J3") 
+        (pin "3") 
+        (pinfunction "Pin_3") 
+        (pintype "passive")) 
+      (node 
+        (ref "U1") 
+        (pin "5") 
+        (pinfunction "SDA") 
+        (pintype "bidirectional")) 
+      (node 
+        (ref "U2") 
+        (pin "13") 
+        (pinfunction "SDA") 
+        (pintype "bidirectional"))) 
+    (net 
+      (code "35") 
+      (name "Net-(JP1-Pad2)") 
+      (node 
+        (ref "JP1") 
+        (pin "2") 
+        (pinfunction "B") 
+        (pintype "passive")) 
+      (node 
+        (ref "U1") 
+        (pin "7") 
+        (pinfunction "~{WC}") 
+        (pintype "input"))) 
+    (net 
+      (code "36") 
+      (name "Net-(JP2-Pad2)") 
+      (node 
+        (ref "JP2") 
+        (pin "2") 
+        (pinfunction "C") 
+        (pintype "passive")) 
+      (node 
+        (ref "U1") 
+        (pin "3") 
+        (pinfunction "E2") 
+        (pintype "input")) 
+      (node 
+        (ref "U2") 
+        (pin "17") 
+        (pinfunction "A2") 
+        (pintype "input"))) 
+    (net 
+      (code "37") 
+      (name "Net-(JP3-Pad2)") 
+      (node 
+        (ref "JP3") 
+        (pin "2") 
+        (pinfunction "C") 
+        (pintype "passive")) 
+      (node 
+        (ref "U1") 
+        (pin "2") 
+        (pinfunction "E1") 
+        (pintype "input")) 
+      (node 
+        (ref "U2") 
+        (pin "16") 
+        (pinfunction "A1") 
+        (pintype "input"))) 
+    (net 
+      (code "38") 
+      (name "Net-(JP4-Pad2)") 
+      (node 
+        (ref "JP4") 
+        (pin "2") 
+        (pinfunction "C") 
+        (pintype "passive")) 
+      (node 
+        (ref "U1") 
+        (pin "1") 
+        (pinfunction "E0") 
+        (pintype "input")) 
+      (node 
+        (ref "U2") 
+        (pin "15") 
+        (pinfunction "A0") 
+        (pintype "input"))) 
+    (net 
+      (code "39") 
+      (name "unconnected-(J3-Pad2)") 
+      (node 
+        (ref "J3") 
+        (pin "2") 
+        (pinfunction "Pin_2") 
+        (pintype "passive+no_connect"))) 
+    (net 
+      (code "40") 
+      (name "unconnected-(J3-Pad4)") 
+      (node 
+        (ref "J3") 
+        (pin "4") 
+        (pinfunction "Pin_4") 
+        (pintype "passive+no_connect"))) 
+    (net 
+      (code "41") 
+      (name "unconnected-(U2-Pad11)") 
+      (node 
+        (ref "U2") 
+        (pin "11") 
+        (pinfunction "NC") 
+        (pintype "no_connect"))) 
+    (net 
+      (code "42") 
+      (name "unconnected-(U2-Pad14)") 
+      (node 
+        (ref "U2") 
+        (pin "14") 
+        (pinfunction "NC") 
+        (pintype "no_connect"))) 
+    (net 
+      (code "43") 
+      (name "unconnected-(U2-Pad18)") 
+      (node 
+        (ref "U2") 
+        (pin "18") 
+        (pinfunction "~{RESET}") 
+        (pintype "input+no_connect"))) 
+    (net 
+      (code "44") 
+      (name "unconnected-(U2-Pad19)") 
+      (node 
+        (ref "U2") 
+        (pin "19") 
+        (pinfunction "INTB") 
+        (pintype "tri_state+no_connect"))) 
+    (net 
+      (code "45") 
+      (name "unconnected-(U2-Pad20)") 
+      (node 
+        (ref "U2") 
+        (pin "20") 
+        (pinfunction "INTA") 
+        (pintype "tri_state+no_connect")))))
