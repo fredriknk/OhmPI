@@ -17,12 +17,12 @@ OHMPI_CONFIG = {
     'R_shunt': 2,  # Shunt resistance in Ohms
     'Imax': 4800 / 50 / 2,  # Maximum current
     'coef_p2': 2.50,  # slope for current conversion for ADS.P2, measurement in V/V
-    'nb_samples': 2,  # Max value 10 # was named integer before...
+    'nb_samples': 20,  # Max value 10 # was named integer before...
     'version': 2,  # Is this still needed?
     'max_elec': 64,
     'board_addresses': {'A': 0x73, 'B': 0x72, 'M': 0x71, 'N': 0x70},  # CHECK IF YOUR BOARDS HAVE THESE ADDRESSES
     'settings': 'ohmpi_settings.json',  # INSERT YOUR FAVORITE SETTINGS FILE HERE
-    'board_version': '22.10',
+    'board_version': 'mb.2023.0.0',
     'mux_board_version': '2023.0.0'
 }  # TODO: add a dictionary with INA models and associated gain values
 
