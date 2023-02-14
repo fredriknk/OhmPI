@@ -13,6 +13,7 @@ mux_addressing_table_file = os.path.join(mux_board_version,"relay_board_32",mux_
 
 electrode_nr = 1
 role = "A"
+# state = on
 
 with open(mux_addressing_table_file, 'r') as myfile:
     header = myfile.readlines()[0].strip('\n').split(',')
@@ -39,5 +40,7 @@ else:
 tca = i2c
 mcp_addr = hex(int(mux_addressing_table['MCP_address'][idx][0], 16))
 MCP23017(tca, address=mcp_addr)
-if state == 'on'
-    set_relay_state(mcp_addr,, True)
+
+set_relay_state(mcp_addr,mcp_gpio, True)
+time.sleep(2)
+set_relay_state(mcp_addr,mcp_gpio, True)

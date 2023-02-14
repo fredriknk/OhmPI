@@ -1340,9 +1340,9 @@ class OhmPi(object):
             tca = adafruit_tca9548a.TCA9548A(self.i2c, hex(int(tca_addr,16)))[tca_channel]
             mcp_addr = hex(int(mux_addressing_table['MCP_address'][idx][0], 16))
             MCP23017(tca, address=mcp_addr)
-            if state == 'on'
+            if state == 'on':
                 set_relay_state(mcp_addr, mcp_gpio, True)
-            if state == 'off'
+            if state == 'off':
                 set_relay_state(mcp_addr, mcp_gpio, False)
 
         else:
