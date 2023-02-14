@@ -1337,13 +1337,13 @@ class OhmPi(object):
                 tca = self.i2c
             else:
                 tca = adafruit_tca9548a.TCA9548A(self.i2c, self.board_addresses[role])
-            tca = adafruit_tca9548a.TCA9548A(self.i2c, hex(int(tca_addr,16)))[tca_channel]
-            mcp_addr = hex(int(mux_addressing_table['MCP_address'][idx][0], 16))
-            MCP23017(tca, address=mcp_addr)
+            tca = adafruit_tca9548a.TCA9548A(self.i2c, int(tca_addr,16))[tca_channel]
+            mcp_addr = int(mux_addressing_table['MCP_address'][idx][0], 16)
+            mcp = MCP23017(tca, address=mcp_addr)
             if state == 'on':
-                set_relay_state(mcp_addr, mcp_gpio, True)
+                set_relay_state(mcp, mcp_gpio, True)
             if state == 'off':
-                set_relay_state(mcp_addr, mcp_gpio, False)
+                set_relay_state(mcp, mcp_gpio, False)
 
         else:
             self.exec_logger.warning('MUX board version not recognized')
