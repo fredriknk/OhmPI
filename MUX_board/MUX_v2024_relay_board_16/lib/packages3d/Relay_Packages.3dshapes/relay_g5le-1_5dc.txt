@@ -1,9 +1,0 @@
-﻿"Symbol";"Value";"Unit";
-"TraceParts.PartNumber";"10-16052011-064061";"";
-"REFERENCE";"G5LE-1 5DC";"";
-"TraceParts.PartTitle";"PCB Power Relay (10A) – G5LE";"";
-"TraceParts.InstanceId";"10-16052011-064061EHOPR50HFMVW51O9AELY106QS";"";
-"SUPPLIER";"OMRON";"";
-"DESIGN";"Relay, Flux protection, SPDT, 5DC";"";
-"TraceParts.PartVersion";"1.3.1";"";
-"TraceParts.PartLanguage";"en";"";

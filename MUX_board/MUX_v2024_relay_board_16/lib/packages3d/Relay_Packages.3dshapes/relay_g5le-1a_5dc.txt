@@ -1,9 +1,0 @@
-﻿"Symbol";"Value";"Unit";
-"TraceParts.PartNumber";"10-16052011-064061";"";
-"REFERENCE";"G5LE-1A 5DC";"";
-"TraceParts.PartTitle";"Relay, Flux protection, SPDT, 5DC";"";
-"TraceParts.InstanceId";"10-16052011-0640616WAUTOF050WBJZ8KTELAH9HEF";"";
-"SUPPLIER";"OMRON";"";
-"DESIGN";"Relay, Flux protection, SPDT, 5DC";"";
-"TraceParts.PartVersion";"1.3.1";"";
-"TraceParts.PartLanguage";"en";"";
