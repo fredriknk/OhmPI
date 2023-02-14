@@ -22,7 +22,8 @@ OHMPI_CONFIG = {
     'max_elec': 64,
     'board_addresses': {'A': 0x73, 'B': 0x72, 'M': 0x71, 'N': 0x70},  # CHECK IF YOUR BOARDS HAVE THESE ADDRESSES
     'settings': 'ohmpi_settings.json',  # INSERT YOUR FAVORITE SETTINGS FILE HERE
-    'board_version': '22.10'
+    'board_version': '22.10',
+    'mux_board_version': '2023.0.0'
 }  # TODO: add a dictionary with INA models and associated gain values
 
 # SET THE LOGGING LEVELS, MQTT BROKERS AND MQTT OPTIONS ACCORDING TO YOUR NEEDS

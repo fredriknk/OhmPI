@@ -635,6 +635,7 @@ class OhmPi(object):
         self.max_elec = OHMPI_CONFIG['max_elec']  # maximum number of electrodes
         self.board_addresses = OHMPI_CONFIG['board_addresses']
         self.board_version = OHMPI_CONFIG['board_version']
+        self.mux_board_version = OHMPI_CONFIG['mux_board_version']
         self.exec_logger.debug(f'OHMPI_CONFIG = {str(OHMPI_CONFIG)}')
 
     def read_quad(self, **kwargs):
@@ -1208,7 +1209,7 @@ class OhmPi(object):
                                          ' Set use_mux to True to use the multiplexer...')
         elif self.sequence is None:
             self.exec_logger.warning('Unable to switch MUX without a sequence')
-        else:
+        elif self.mux_board_version == '2023.0.0':
             # choose with MUX board
             tca = adafruit_tca9548a.TCA9548A(self.i2c, self.board_addresses[role])
 
@@ -1231,6 +1232,34 @@ class OhmPi(object):
                                        f'({str(hex(self.board_addresses[role]))}) {state} for electrode {electrode_nr}')
             else:
                 self.exec_logger.warning(f'Unable to address electrode nr {electrode_nr}')
+
+        elif self.mux_board_version == '2024.0.0':
+            with open(self.mux_addressing_table, 'r') as myfile:
+                header = myfile.readlines()[0].strip('\n').split(',')
+            mux_addressing_table = np.genfromtxt(self.mux_addressing_table, dtype=str,
+                                                   delimiter=',', skip_header=1, )
+            mux_addressing_table = {header[k]: mux_addressing_table.T[k] for k in range(len(header))}
+
+            def set_relay_state(mcp, mcp_pin, state=True):
+                pin_enable = mcp.get_pin(mcp_pin)
+                pin_enable.direction = Direction.OUTPUT
+                pin_enable.value = state
+
+            idx = np.where((mux_addressing_table['Electrode_id'] == electrode_nr) & (mux_addressing_table['Role'] == role))[0]
+            tca_addr = mux_addressing_table['TCA_address'][idx][0]
+            tca_channel = mux_addressing_table['TCA_channel'][idx][0]
+            if tca_addr is None:
+                tca = self.i2c
+            else:
+                tca = adafruit_tca9548a.TCA9548A(self.i2c, self.board_addresses[role])
+            tca = adafruit_tca9548a.TCA9548A(self.i2c, hex(int(tca_addr,16)))[tca_channel]
+            mcp_addr = hex(int(mux_addressing_table['MCP_address'][idx][0], 16))
+            MCP23017(tca, address=mcp_addr)
+            if state == 'on'
+                set_relay_state(mcp_addr, , True)
+
+        else:
+            self.exec_logger.warning('MUX board version not recognized')
 
     def switch_mux_on(self, quadrupole, cmd_id=None):
         """Switches on multiplexer relays for given quadrupole.
