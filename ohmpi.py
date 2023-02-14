@@ -1332,6 +1332,7 @@ class OhmPi(object):
             idx = np.where((mux_addressing_table['Electrode_id'] == electrode_nr) & (mux_addressing_table['Role'] == role))[0]
             tca_addr = mux_addressing_table['TCA_address'][idx][0]
             tca_channel = mux_addressing_table['TCA_channel'][idx][0]
+            mcp_gpio = mux_addressing_table['MCP_GPIO'][idx][0]
             if tca_addr is None:
                 tca = self.i2c
             else:
@@ -1340,7 +1341,9 @@ class OhmPi(object):
             mcp_addr = hex(int(mux_addressing_table['MCP_address'][idx][0], 16))
             MCP23017(tca, address=mcp_addr)
             if state == 'on'
-                set_relay_state(mcp_addr, , True)
+                set_relay_state(mcp_addr, mcp_gpio, True)
+            if state == 'off'
+                set_relay_state(mcp_addr, mcp_gpio, False)
 
         else:
             self.exec_logger.warning('MUX board version not recognized')
