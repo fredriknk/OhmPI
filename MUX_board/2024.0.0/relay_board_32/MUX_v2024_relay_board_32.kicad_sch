@@ -3982,7 +3982,7 @@
     (uuid 8151541a-a38e-4a24-8b78-b568069f5f2d)
     (property "Reference" "J3" (id 0) (at 44.45 170.18 90))
     (property "Value" "Screw_Terminal_01x04" (id 1) (at 44.45 172.72 90))
-    (property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-4_1x04_P5.00mm_Horizontal" (id 2) (at 43.18 177.165 0)
+    (property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-5-5.08_1x05_P5.08mm_Horizontal" (id 2) (at 43.18 177.165 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 43.18 177.165 0)
@@ -4176,7 +4176,7 @@
     (property "Value" "Relays Pwr" (id 1) (at 20.32 132.715 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal" (id 2) (at 25.4 126.365 0)
+    (property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" (id 2) (at 25.4 126.365 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 25.4 126.365 0)
@@ -4283,7 +4283,7 @@
     (uuid f1801d73-c5ef-4ad8-b05f-5217ff13ffce)
     (property "Reference" "J5" (id 0) (at 154.305 208.28 90))
     (property "Value" "Screw_Terminal_01x16" (id 1) (at 154.305 210.82 90))
-    (property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-16_1x16_P5.00mm_Horizontal" (id 2) (at 153.035 215.265 0)
+    (property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-16-5.08_1x16_P5.08mm_Horizontal" (id 2) (at 153.035 215.265 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 153.035 215.265 0)
@@ -5550,19 +5550,19 @@
       (reference "D32") (unit 1) (value "1N_E4007") (footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal")
     )
     (path "/c416053f-73b6-4985-bb42-db33da63c80a"
-      (reference "J1") (unit 1) (value "Relays Pwr") (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal")
+      (reference "J1") (unit 1) (value "Relays Pwr") (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
     )
     (path "/27027fc7-0ffe-414c-81cd-d00be9c60ed1"
       (reference "J2") (unit 1) (value "I2C") (footprint "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical")
     )
     (path "/8151541a-a38e-4a24-8b78-b568069f5f2d"
-      (reference "J3") (unit 1) (value "Screw_Terminal_01x04") (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-4_1x04_P5.00mm_Horizontal")
+      (reference "J3") (unit 1) (value "Screw_Terminal_01x04") (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-5-5.08_1x05_P5.08mm_Horizontal")
     )
     (path "/13d5b8a6-8ed6-49ce-95a4-239de8600b7a"
       (reference "J4") (unit 1) (value "Conn_02x08_Odd_Even") (footprint "Connector_IDC:IDC-Header_2x08_P2.54mm_Vertical")
     )
     (path "/f1801d73-c5ef-4ad8-b05f-5217ff13ffce"
-      (reference "J5") (unit 1) (value "Screw_Terminal_01x16") (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-16_1x16_P5.00mm_Horizontal")
+      (reference "J5") (unit 1) (value "Screw_Terminal_01x16") (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-16-5.08_1x16_P5.08mm_Horizontal")
     )
     (path "/fe10c99a-9c56-4111-8450-4fe288599c36"
       (reference "JP1") (unit 1) (value "Addr 2") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
