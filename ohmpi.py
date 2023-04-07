@@ -281,7 +281,7 @@ class OhmPi(object):
             - vmax : compute Vab to reach a maximum Iab and Vmn
             - constant : apply given Vab
         tx_volt : float, optional
-            Voltage apply to try to guess the best voltage. 5 V applied
+            Voltage to apply for guessing the best voltage. 5 V applied
             by default. If strategy "constant" is chosen, constant voltage
             to applied is "tx_volt".
 
@@ -348,7 +348,7 @@ class OhmPi(object):
                 vmn = U2
         
         elif strategy == 'vmax':
-            # implement different strategy
+            # implement different strategies
             I=0
             vmn=0
             count=0
@@ -753,6 +753,9 @@ class OhmPi(object):
     def read_quad(self, **kwargs):
         warnings.warn('This function is deprecated. Use load_sequence instead.', DeprecationWarning)
         self.load_sequence(**kwargs)
+
+    def _read_voltage(self):
+        pass
 
     def remove_data(self, cmd_id=None):
         """Remove all data in the data folder
