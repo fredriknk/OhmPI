@@ -785,7 +785,7 @@ class OhmPi(object):
             self.exec_logger.warning('Not on Raspberry Pi, skipping reboot...')
 
     def run_measurement(self, quad=None, nb_stack=None, injection_duration=None,
-                        autogain=True, strategy='constant', tx_volt=5, best_tx_injtime=0.1,
+                        autogain=True, strategy='constant', tx_volt=5, best_tx_injtime=0.1, duty_cycle=0.5,
                         cmd_id=None):
         """Measures on a quadrupole and returns transfer resistance.
 
@@ -812,6 +812,10 @@ class OhmPi(object):
             measurement will be taken and values will be NaN.
         best_tx_injtime : float, optional
             (V3.0 only) Injection time in seconds used for finding the best voltage.
+        duty_cycle : float, optional, default: 0.5
+            Ratio of time between injection duration and no injection duration during a half-cycle
+            It should be comprised between 0.5 (no injection duration same as injection duration) and 1 (no injection
+            duration equal to 0)
         cmd_id : str, optional
             Unique command identifier
         """
@@ -1009,17 +1013,15 @@ class OhmPi(object):
                     # stop current injection
                     self.pin0.value = False
                     self.pin1.value = False
-#                     if autogain: # select gain computed on first half cycle
-#                             self.ads_voltage = ads.ADS1115(self.i2c, gain=gain_voltage[2],data_rate=860,
-#                                                            address=self.ads_voltage_address, mode=0)
-                    self.pin6.value = False# IHM current injection led on
+                    if self.board_version == 'mb.2023.0.0':
+                        self.pin6.value = False# IHM current injection led on
                     end_delay = time.time()
 
                     # truncate the meas array if we didn't fill the last samples  #TODO: check why
                     meas = meas[:k + 1]
 
                     # measurement of current i and voltage u during off time
-                    measpp = np.zeros((meas.shape[0], 3)) * np.nan
+                    measpp = np.zeros((int(meas.shape[0]*(1/duty_cycle-1)), 3)) * np.nan
                     start_delay = time.time()  # stating measurement time
                     dt = 0
                     for k in range(0, measpp.shape[0]):
