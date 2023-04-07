@@ -260,7 +260,7 @@ class OhmPi(object):
                 w.writeheader()
                 w.writerow(last_measurement)
 
-    def _compute_tx_volt(self, best_tx_injtime=0.1, strategy='vmax', tx_volt=5):
+    def _compute_tx_volt(self, best_tx_injtime=0.1, strategy='vmax', tx_volt=5, autogain=True):
         """Estimates best Tx voltage based on different strategies.
         At first a half-cycle is made for a short duration with a fixed
         known voltage. This gives us Iab and Rab. We also measure Vmn.
@@ -325,15 +325,16 @@ class OhmPi(object):
             self.DPS.write_register(0x0000, volt, 2)
             self.DPS.write_register(0x09, 1)  # DPS5005 on
             time.sleep(best_tx_injtime)  # inject for given tx time
-            # autogain
             self.ads_current = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_current_address)
             self.ads_voltage = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_voltage_address)
-            gain_current = self._gain_auto(AnalogIn(self.ads_current, ads.P0))
-            gain_voltage0 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P0))
-            gain_voltage2 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P2))
-            gain_voltage = np.min([gain_voltage0, gain_voltage2])  # TODO: separate gain for P0 and P2
-            self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860, address=self.ads_current_address)
-            self.ads_voltage = ads.ADS1115(self.i2c, gain=gain_voltage, data_rate=860, address=self.ads_voltage_address)
+            # autogain
+            if autogain:
+                gain_current = self._gain_auto(AnalogIn(self.ads_current, ads.P0))
+                gain_voltage0 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P0))
+                gain_voltage2 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P2))
+                gain_voltage = np.min([gain_voltage0, gain_voltage2])  # TODO: separate gain for P0 and P2
+                self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860, address=self.ads_current_address)
+                self.ads_voltage = ads.ADS1115(self.i2c, gain=gain_voltage, data_rate=860, address=self.ads_voltage_address)
             # we measure the voltage on both A0 and A2 to guess the polarity
             I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt  # noqa measure current
             U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.  # noqa measure voltage
@@ -366,15 +367,16 @@ class OhmPi(object):
                     self.DPS.write_register(0x09, 1)  # DPS5005 on
                     time.sleep(best_tx_injtime)  # inject for given tx time
                 self.DPS.write_register(0x0000, volt, 2)
-                # autogain
                 self.ads_current = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_current_address)
                 self.ads_voltage = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_voltage_address)
-                gain_current = self._gain_auto(AnalogIn(self.ads_current, ads.P0))
-                gain_voltage0 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P0))
-                gain_voltage2 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P2))
-                gain_voltage = np.min([gain_voltage0, gain_voltage2])  #TODO: separate gain for P0 and P2
-                self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860, address=self.ads_current_address)
-                self.ads_voltage = ads.ADS1115(self.i2c, gain=gain_voltage, data_rate=860, address=self.ads_voltage_address)
+                # autogain
+                if autogain:
+                    gain_current = self._gain_auto(AnalogIn(self.ads_current, ads.P0))
+                    gain_voltage0 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P0))
+                    gain_voltage2 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P2))
+                    gain_voltage = np.min([gain_voltage0, gain_voltage2])  #TODO: separate gain for P0 and P2
+                    self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860, address=self.ads_current_address)
+                    self.ads_voltage = ads.ADS1115(self.i2c, gain=gain_voltage, data_rate=860, address=self.ads_voltage_address)
                 # we measure the voltage on both A0 and A2 to guess the polarity
                 for i in range(10):
                     I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt  # noqa measure current
@@ -437,16 +439,16 @@ class OhmPi(object):
                 if count==1:
                     self.DPS.write_register(0x09, 1)  # DPS5005 on
                 time.sleep(best_tx_injtime)  # inject for given tx time
-
-                # autogain
                 self.ads_current = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_current_address)
                 self.ads_voltage = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_voltage_address)
-                gain_current = self._gain_auto(AnalogIn(self.ads_current, ads.P0))
-                gain_voltage0 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P0))
-                gain_voltage2 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P2))
-                gain_voltage = np.min([gain_voltage0, gain_voltage2])  #TODO: separate gain for P0 and P2
-                self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860, address=self.ads_current_address)
-                self.ads_voltage = ads.ADS1115(self.i2c, gain=gain_voltage, data_rate=860, address=self.ads_voltage_address)
+                # autogain
+                if autogain:
+                    gain_current = self._gain_auto(AnalogIn(self.ads_current, ads.P0))
+                    gain_voltage0 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P0))
+                    gain_voltage2 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P2))
+                    gain_voltage = np.min([gain_voltage0, gain_voltage2])  #TODO: separate gain for P0 and P2
+                    self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860, address=self.ads_current_address)
+                    self.ads_voltage = ads.ADS1115(self.i2c, gain=gain_voltage, data_rate=860, address=self.ads_voltage_address)
                 # we measure the voltage on both A0 and A2 to guess the polarity
                 I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt  # noqa measure current
                 U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.  # noqa measure voltage
@@ -871,7 +873,7 @@ class OhmPi(object):
             # get best voltage to inject AND polarity
             if self.idps:
                 tx_volt, polarity, Rab = self._compute_tx_volt(
-                    best_tx_injtime=best_tx_injtime, strategy=strategy, tx_volt=tx_volt)
+                    best_tx_injtime=best_tx_injtime, strategy=strategy, tx_volt=tx_volt,autogain=autogain)
                 self.exec_logger.debug(f'Best vab found is {tx_volt:.3f}V')
             else:
                 polarity = 1
