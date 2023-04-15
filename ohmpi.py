@@ -1582,18 +1582,19 @@ class OhmPi(object):
             # find I2C address of the electrode and corresponding relay
             # considering that one MCP23017 can cover 16 electrodes
             i2c_address = 7 - (electrode_nr - 1) // 16  # quotient without rest of the division
-            relay_nr = electrode_nr - (electrode_nr // 16) * 16 + 1
+            relay_nr = (electrode_nr-1) - ((electrode_nr-1) // 16) * 16
+
 
             if i2c_address is not None:
                 # select the MCP23017 of the selected MUX board
                 mcp2 = MCP23017(tca[i2c_address])
-                mcp2.get_pin(relay_nr - 1).direction = digitalio.Direction.OUTPUT
+                mcp2.get_pin(relay_nr).direction = digitalio.Direction.OUTPUT
 
                 # activate relay for given time    
-                mcp2.get_pin(relay_nr - 1).value = True
+                mcp2.get_pin(relay_nr).value = True
                 print('electrode:', electrode_nr, ' activated...', end='', flush=True)
                 time.sleep(activation_time)
-                mcp2.get_pin(relay_nr - 1).value = False
+                mcp2.get_pin(relay_nr).value = False
                 print(' deactivated')
                 time.sleep(activation_time)
         print('Test finished.')
