@@ -339,7 +339,6 @@ class OhmPi(object):
             I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt  # noqa measure current
             U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.  # noqa measure voltage
             U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000.  # noqa
-
             # check polarity
             polarity = 1  # by default, we guessed it right
             vmn = U0
@@ -905,13 +904,13 @@ class OhmPi(object):
                     out_of_range = True
 
             if not out_of_range:  # we found a Vab in the range so we measure
+                gain = 2 / 3
+                self.ads_voltage = ads.ADS1115(self.i2c, gain=gain, data_rate=860,
+                                               address=self.ads_voltage_address, mode=0)
                 if autogain:
-
                     # compute autogain
                     gain_voltage = []
                     for n in [0,1]:  # make short cycle for gain computation
-                        self.ads_voltage = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860,
-                                                       address=self.ads_voltage_address, mode=0)
                         if n == 0:
                             self.pin0.value = True
                             self.pin1.value = False
@@ -946,7 +945,7 @@ class OhmPi(object):
                             gain_voltage.append(self._gain_auto(AnalogIn(self.ads_voltage, ads.P2)))                        
                         if self.board_version == 'mb.2023.0.0':
                             self.pin6.value = False # IHM current injection led off
-
+                        gain = np.min(gain_voltage)
                     self.exec_logger.debug(f'Gain current: {gain_current:.3f}, gain voltage: {gain_voltage[0]:.3f}, '
                                            f'{gain_voltage[1]:.3f}')
                     self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860,
@@ -1022,7 +1021,8 @@ class OhmPi(object):
 
                     # measurement of current i and voltage u during off time
                     measpp = np.zeros((int(meas.shape[0]*(1/duty_cycle-1)), 3)) * np.nan
-                    start_delay = time.time()  # stating measurement time
+                    time.sleep(sampling_interval / 1000)
+                    start_delay_off = time.time()  # stating measurement time
                     dt = 0
                     for k in range(0, measpp.shape[0]):
                         # reading current value on ADS channels
@@ -1031,18 +1031,18 @@ class OhmPi(object):
                             if pinMN == 0:
                                 measpp[k, 1] = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.
                             else:
-                                measpp[k, 1] = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * -1
+                                measpp[k, 1] = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * -1.0
                         elif self.board_version == '22.10':
                             measpp[k, 1] = -AnalogIn(self.ads_voltage, ads.P0, ads.P1).voltage * self.coef_p2 * 1000.
                         else:
                             self.exec_logger.debug('unknown board')
                         time.sleep(sampling_interval / 1000)
-                        dt = time.time() - start_delay  # real injection time (s)
+                        dt = time.time() - start_delay_off  # real injection time (s)
                         measpp[k, 2] = time.time() - start_time
                         if dt > (injection_duration - 0 * sampling_interval / 1000.):
                             break
 
-                    end_delay = time.time()
+                    end_delay_off = time.time()
 
                     # truncate the meas array if we didn't fill the last samples
                     measpp = measpp[:k + 1]
@@ -1140,7 +1140,7 @@ class OhmPi(object):
                 "Vmn_per_stack [mV]": np.array([np.diff(np.mean(vmn_stack[i*2:i*2+2], axis=1))[0] / 2 for i in range(nb_stack)]),
                 "R_stack [ohm]": r_stack_mean,
                 "R_std [ohm]": r_stack_std,
-                "R_per_stack [Ohm]": np.mean([np.diff(np.mean(vmn_stack[i*2:i*2+2], axis=1)) / 2 for i in range(nb_stack)]) / np.array([np.mean(i_stack[i*2:i*2+2]) for i in range(nb_stack)]),
+                "R_per_stack [ohm]": np.mean([np.diff(np.mean(vmn_stack[i*2:i*2+2], axis=1)) / 2 for i in range(nb_stack)]) / np.array([np.mean(i_stack[i*2:i*2+2]) for i in range(nb_stack)]),
                 "PS_per_stack [mV]":  np.array([np.mean(np.mean(vmn_stack[i*2:i*2+2], axis=1)) for i in range(nb_stack)]),
                 "PS_stack [mV]": ps_stack_mean,
                 "R_ab [ohm]": Rab
