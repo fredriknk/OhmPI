@@ -24,6 +24,7 @@ import threading
 from logging_setup import setup_loggers
 from config import MQTT_CONTROL_CONFIG, OHMPI_CONFIG, EXEC_LOGGING_CONFIG
 from logging import DEBUG
+from plots import *
 
 # finish import (done only when class is instantiated as some libs are only available on arm64 platform)
 try:
@@ -1235,7 +1236,7 @@ class OhmPi(object):
         self.thread = threading.Thread(target=func)
         self.thread.start()
 
-    def run_sequence(self, cmd_id=None, **kwargs):
+    def run_sequence(self, cmd_id=None, plot_realtime_fulldata=False, **kwargs):
         """Runs sequence synchronously (=blocking on main thread).
            Additional arguments are passed to run_measurement().
 
@@ -1314,7 +1315,6 @@ class OhmPi(object):
 
             # switch mux off
             self.switch_mux_off(quad)
-
             # add command_id in dataset
             acquired_data.update({'cmd_id': cmd_id})
             # log data to the data logger
@@ -1323,6 +1323,20 @@ class OhmPi(object):
             self.append_and_save(filename, acquired_data)
             self.exec_logger.debug(f'quadrupole {i + 1:d}/{n:d}')
 
+            if plot_realtime_fulldata:
+                realtime_plot_window = 10
+                plt.ion()
+                last_measurement = acquired_data["fulldata"][~np.isnan(acquired_data["fulldata"][:, 2])]
+                if i==0:
+                    xlim = [last_measurement[:, 2][-1] - realtime_plot_window, last_measurement[:, 2][-1]]
+                    fig, (ax1,ax2), (line1,line2) = plot_fulldata(last_measurement, realtime=True,xlim=xlim)
+                    acquired_dataset = last_measurement
+                else:
+                    fig,(ax1,ax2), (line1,line2), acquired_dataset = \
+                        update_realtime_fulldata_plot(last_measurement, acquired_dataset, (line1,line2),(ax1,ax2), fig, x_window=realtime_plot_window )
+
+        if plot_realtime_fulldata:
+            return fig,(ax1,ax2), (line1,line2), acquired_dataset
         self.switch_dps('off')
         self.status = 'idle'
 
