@@ -1236,7 +1236,7 @@ class OhmPi(object):
         self.thread = threading.Thread(target=func)
         self.thread.start()
 
-    def run_sequence(self, cmd_id=None, plot_realtime_fulldata=False, **kwargs):
+    def run_sequence(self, cmd_id=None, plot_realtime_fulldata=False, plot_ads=False, **kwargs):
         """Runs sequence synchronously (=blocking on main thread).
            Additional arguments are passed to run_measurement().
 
@@ -1329,17 +1329,18 @@ class OhmPi(object):
                 last_measurement = acquired_data["fulldata"][~np.isnan(acquired_data["fulldata"][:, 2])]
                 if i==0:
                     xlim = [last_measurement[:, 2][-1] - realtime_plot_window, last_measurement[:, 2][-1]]
-                    fig, (ax1,ax2), (line1,line2) = plot_fulldata(last_measurement, realtime=True,xlim=xlim)
+                    fig, (ax1, ax2), lines = plot_fulldata(last_measurement, realtime=True, xlim=xlim, plot_ads=plot_ads)
                     acquired_dataset = last_measurement
                 else:
-                    fig,(ax1,ax2), (line1,line2), acquired_dataset = \
-                        update_realtime_fulldata_plot(last_measurement, acquired_dataset, (line1,line2),(ax1,ax2), fig, x_window=realtime_plot_window )
+                    fig, (ax1, ax2), lines, acquired_dataset = \
+                            update_realtime_fulldata_plot(last_measurement, acquired_dataset, lines,
+                                                          (ax1, ax2), fig, x_window=realtime_plot_window,plot_ads=plot_ads)
 
-        if plot_realtime_fulldata:
-            return fig,(ax1,ax2), (line1,line2), acquired_dataset
         self.switch_dps('off')
         self.status = 'idle'
 
+        if plot_realtime_fulldata:
+            return fig,(ax1,ax2), (line1,line2), acquired_dataset
     def run_sequence_async(self, cmd_id=None, **kwargs):
         """Runs the sequence in a separate thread. Can be stopped by 'OhmPi.interrupt()'.
             Additional arguments are passed to run_measurement().
