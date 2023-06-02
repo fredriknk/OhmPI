@@ -790,7 +790,7 @@ class OhmPi(object):
         else:
             self.exec_logger.warning('Not on Raspberry Pi, skipping reboot...')
 
-    def run_measurement_new(self, quad=None, nb_stack=None, injection_duration=None,
+    def run_measurement(self, quad=None, nb_stack=None, injection_duration=None,
                         autogain=True, strategy='constant', tx_volt=5, best_tx_injtime=0.1, duty_cycle=0.5,
                         cmd_id=None):
         """Measures on a quadrupole and returns transfer resistance.
