@@ -906,7 +906,7 @@ class OhmPi(object):
                 if not np.isnan(tx_volt):
                     self.DPS.write_register(0x0000, tx_volt, 2)  # set tx voltage in V
                     self.DPS.write_register(0x09, 1)  # DPS5005 on
-                    time.sleep(1) # do not chnage this value 1 second is the minimum
+                    time.sleep(2) # do not chnage this value 1 second is the minimum
                 else:
                     self.exec_logger.debug('No best voltage found, will not take measurement')
                     out_of_range = True
