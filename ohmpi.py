@@ -32,6 +32,7 @@ try:
     import busio  # noqa
     import adafruit_tca9548a  # noqa
     import adafruit_ads1x15.ads1115 as ads  # noqa
+    from adafruit_ads1x15.ads1x15 import Mode
     from adafruit_ads1x15.analog_in import AnalogIn  # noqa
     from adafruit_mcp230xx.mcp23008 import MCP23008  # noqa
     from adafruit_mcp230xx.mcp23017 import MCP23017  # noqa
@@ -892,9 +893,11 @@ class OhmPi(object):
 
             # first reset the gain to 2/3 before trying to find best gain (mode 0 is continuous)
             self.ads_current = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860,
-                                        address=self.ads_current_address, mode=0)
+                                        address=self.ads_current_address)
+            self.ads_current.mode= Mode.CONTINUOUS                             
             self.ads_voltage = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860,
-                                        address=self.ads_voltage_address, mode=0)
+                                        address=self.ads_voltage_address)
+            self.ads_voltage.mode= Mode.CONTINUOUS 
             # turn on the power supply
             start_delay = None
             end_delay = None
@@ -911,7 +914,8 @@ class OhmPi(object):
             if not out_of_range:  # we found a Vab in the range so we measure
                 gain = 2 / 3
                 self.ads_voltage = ads.ADS1115(self.i2c, gain=gain, data_rate=860,
-                                            address=self.ads_voltage_address, mode=0)
+                                            address=self.ads_voltage_address)
+                self.ads_voltage.mode= Mode.CONTINUOUS 
                 if autogain:
                     # compute autogain
                     gain_voltage = []
@@ -955,7 +959,8 @@ class OhmPi(object):
                     self.exec_logger.debug(f'Gain current: {gain_current:.3f}, gain voltage: {gain_voltage[0]:.3f}, '
                                         f'{gain_voltage[1]:.3f}')
                     self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860,
-                                                address=self.ads_current_address, mode=0)
+                                                address=self.ads_current_address)
+                    self.ads_current.mode= Mode.CONTINUOUS 
 
                 self.pin0.value = False
                 self.pin1.value = False
@@ -982,13 +987,15 @@ class OhmPi(object):
                         self.pin1.value = False
                         if autogain:  # select gain computed on first half cycle
                             self.ads_voltage = ads.ADS1115(self.i2c, gain=np.min(gain_voltage), data_rate=860,
-                                                        address=self.ads_voltage_address, mode=0)
+                                                        address=self.ads_voltage_address)
+                            self.ads_voltage.mode= Mode.CONTINUOUS 
                     else:
                         self.pin0.value = False
                         self.pin1.value = True  # current injection nr2
                         if autogain:  # select gain computed on first half cycle
                             self.ads_voltage = ads.ADS1115(self.i2c, gain=np.min(gain_voltage), data_rate=860,
-                                                        address=self.ads_voltage_address, mode=0)
+                                                        address=self.ads_voltage_address)
+                            self.ads_current.mode= Mode.CONTINUOUS 
                     self.exec_logger.debug(f'Stack {n} {self.pin0.value} {self.pin1.value}')
                     if self.board_version == 'mb.2023.0.0':
                         self.pin6.value = True  # IHM current injection led on
