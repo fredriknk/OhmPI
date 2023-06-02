@@ -969,7 +969,7 @@ class OhmPi(object):
                 pinMN = 0 if polarity > 0 else 2  # noqa
 
                 # sampling for each stack at the end of the injection
-                sampling_interval = 10  # ms    # TODO: make this a config option
+                sampling_interval = 2  # ms    # TODO: make this a config option
                 self.nb_samples = int(injection_duration * 1000 // sampling_interval) + 1  # TODO: check this strategy
 
                 # full data for waveform
