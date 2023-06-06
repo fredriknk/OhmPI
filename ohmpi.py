@@ -995,7 +995,7 @@ class OhmPi(object):
                         if autogain:  # select gain computed on first half cycle
                             self.ads_voltage = ads.ADS1115(self.i2c, gain=np.min(gain_voltage), data_rate=860,
                                                         address=self.ads_voltage_address)
-                            self.ads_current.mode= Mode.CONTINUOUS 
+                            self.ads_voltage.mode= Mode.CONTINUOUS 
                     self.exec_logger.debug(f'Stack {n} {self.pin0.value} {self.pin1.value}')
                     if self.board_version == 'mb.2023.0.0':
                         self.pin6.value = True  # IHM current injection led on
