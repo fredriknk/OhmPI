@@ -884,6 +884,7 @@ class OhmPi(object):
 
             # get best voltage to inject AND polarity
             if self.idps:
+                self.DPS.write_register(0X001, 2000, 0) #max current allow 200 mA                          
                 tx_volt, polarity, Rab = self._compute_tx_volt(
                     best_tx_injtime=best_tx_injtime, strategy=strategy, tx_volt=tx_volt, autogain=autogain)
                 self.exec_logger.debug(f'Best vab found is {tx_volt:.3f}V')
