@@ -366,41 +366,36 @@ class OhmPi(object):
                 vmn = U2
         
         elif strategy == 'vmax':
+            volt = 5
             # implement different strategies
             I=0
             vmn=0
             count=0
-            while I < 3 or abs(vmn) < 20 :  #TODO: hardware related - place in config
+            while I < 3 or abs(vmn) < 20:  #TODO: hardware related - place in config
             
                 if count > 0 :
-                    #print('o', volt)
                     volt = volt + 2
-                   # print('>', volt)
                 count=count+1
-                if volt > 50:
+                if volt > tx_max:
                     break
         
                 # set voltage for test
                 if count==1:
+                    self.DPS.write_register(0x0000, volt, 2)
                     self.DPS.write_register(0x09, 1)  # DPS5005 on
-                    time.sleep(best_tx_injtime)  # inject for given tx time
+                    # inject for given tx time
+                print(volt)
                 self.DPS.write_register(0x0000, volt, 2)
+                time.sleep(best_tx_injtime)
                 self.ads_current = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_current_address)
+                self.ads_current.mode = Mode.CONTINUOUS
                 self.ads_voltage = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_voltage_address)
-                # autogain
-                if autogain:
-                    gain_current = self._gain_auto(AnalogIn(self.ads_current, ads.P0))
-                    gain_voltage0 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P0))
-                    gain_voltage2 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P2))
-                    gain_voltage = np.min([gain_voltage0, gain_voltage2])  #TODO: separate gain for P0 and P2
-                    self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860, address=self.ads_current_address)
-                    self.ads_voltage = ads.ADS1115(self.i2c, gain=gain_voltage, data_rate=860, address=self.ads_voltage_address)
-                # we measure the voltage on both A0 and A2 to guess the polarity
-                for i in range(10):
-                    I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt  # noqa measure current
-                    U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.  # noqa measure voltage
-                    U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000.  # noqa
-                    time.sleep(best_tx_injtime)
+                self.ads_voltage.mode = Mode.CONTINUOUS
+                # No need to use autogain to save time
+                I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt  # noqa measure current
+                U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.  # noqa measure voltage
+                U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000.  # noqa
+                time.sleep(best_tx_injtime)
 
                 # check polarity
                 polarity = 1  # by default, we guessed it right
@@ -408,10 +403,10 @@ class OhmPi(object):
                 if U0 < 0:  # we guessed it wrong, let's use a correction factor
                     polarity = -1
                     vmn = U2
-            
+                    
             n = 0
             while (abs(vmn) > voltage_max or I > current_max) and volt>0:  #If starting voltage is too high, need to lower it down
-                # print('we are out of range! so decreasing volt')
+                print('we are out of range! so decreasing volt')
                 volt = volt - 2
                 self.DPS.write_register(0x0000, volt, 2)
                 #self.DPS.write_register(0x09, 1)  # DPS5005 on
@@ -436,9 +431,6 @@ class OhmPi(object):
             vab = factor * volt * 0.9
             if vab > tx_max:
                 vab = tx_max
-            #print(factor_I, factor_vmn, 'factor!!')
-
-
         elif strategy == 'vmin':
             # implement different strategy
             I=20
@@ -514,7 +506,7 @@ class OhmPi(object):
         # self.DPS.write_register(0x09, 0) # DPS5005 off
         self.pin0.value = False
         self.pin1.value = False
-
+        print(vab)
         return vab, polarity, Rab
 
     @staticmethod
