@@ -158,9 +158,13 @@ class OhmPi(object):
                 self.DPS.mode = minimalmodbus.MODE_RTU  # RTU mode
                 self.DPS.write_register(0x0001, 200, 0)  # max current allowed (100 mA for relays)
                 # (last number) 0 is for mA, 3 is for A
-
                 #self.soh_logger.debug(f'Battery voltage: {self.DPS.read_register(0x05,2 ):.3f}') TODO: SOH logger
-                print(self.DPS.read_register(0x05,2 ))
+                batt_level = self._read_battery_level()
+                msg = f'Battery voltage: {batt_level:.3f}'
+                if batt_level < 12:
+                    print(colored(f'\u2611 {msg}', 'red'))
+                else:
+                    print(colored(f'\u2611 {msg}', 'green'))
                 self.switch_dps('off')
 
 
@@ -771,6 +775,9 @@ class OhmPi(object):
     def _read_voltage(self):
         pass
 
+    def _read_battery_level(self):
+        return self.DPS.read_register(0x05, 2)
+
     def remove_data(self, cmd_id=None):
         """Remove all data in the data folder
 
@@ -1195,7 +1202,8 @@ class OhmPi(object):
                     [np.mean(np.mean(vmn_stack[i * 2:i * 2 + 2], axis=1)) for i in range(nb_stack)]),
                 "PS_stack [mV]": ps_stack_mean,
                 "R_ab [ohm]": Rab,
-                "Gain_Vmn": gain
+                "Gain_Vmn": gain,
+                "Tx_battery [V]":self._read_battery_level()
             }
             # print(np.array([(vmn_stack[i*2:i*2+2]) for i in range(nb_stack)]))
             # elif self.board_version == '22.10':
