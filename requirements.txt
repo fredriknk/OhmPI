@@ -3,9 +3,11 @@ adafruit-blinka
 adafruit-circuitpython-ads1x15
 adafruit-circuitpython-tca9548a
 adafruit-circuitpython-mcp230xx
+adafruit_extended_bus
 minimalmodbus
 gpiozero
 numpy
 paho-mqtt
 termcolor
 pandas
+matplotlib
