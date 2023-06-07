@@ -33,7 +33,7 @@ def plot_fulldata(fulldata, axes=None, fig=None, save=False, output="fulldata.pn
     if realtime:
         fig.canvas.draw()
         fig.canvas.flush_events()
-        if plot_ads:
+        if not plot_ads:
            return fig, (ax1,ax2), (line1,line2)
         else:
             return fig, (ax1, ax2), (line1, line2, line3, line4)
