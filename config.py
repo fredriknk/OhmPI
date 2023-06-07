@@ -24,8 +24,8 @@ OHMPI_CONFIG = {
     'settings': 'ohmpi_settings.json',  # INSERT YOUR FAVORITE SETTINGS FILE HERE
     'board_version': 'mb.2023.0.0',#,'22.10',
     'mcp_board_address': 0x21,
-    'i2c_mux_address': 2  # 2 if on same bus as the measurement board, 4 if additional bus
-
+    'i2c_mux_address': 2,  # 2 if on same bus as the measurement board, 4 if additional bus
+    'vmn_offset': 0
 }  # TODO: add a dictionary with INA models and associated gain values
 
 # SET THE LOGGING LEVELS, MQTT BROKERS AND MQTT OPTIONS ACCORDING TO YOUR NEEDS

@@ -762,6 +762,7 @@ class OhmPi(object):
         self.mcp_board_address = OHMPI_CONFIG['mcp_board_address']
         self.exec_logger.debug(f'OHMPI_CONFIG = {str(OHMPI_CONFIG)}')
         self.i2c_mux_address = OHMPI_CONFIG['i2c_mux_address']
+        self.vmn_offset = OHMPI_CONFIG['vmn_offset']
 
     def read_quad(self, **kwargs):
         warnings.warn('This function is deprecated. Use load_sequence instead.', DeprecationWarning)
@@ -1028,7 +1029,7 @@ class OhmPi(object):
                             #     meas[k, 3] = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.
                             u0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.
                             u2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000.
-                            u = np.max([u0, u2]) * (np.heaviside(u0 - u2, 1.) * 2 - 1.)
+                            u = np.max([u0, u2]) * (np.heaviside(u0 - u2, 1.) * 2 - 1.) - self.vmn_offset
                             meas[k, 1] = u
                             meas[k, 3] = u0
                             meas[k, 4] = u2 *-1.0
@@ -1071,7 +1072,7 @@ class OhmPi(object):
                             #     measpp[k, 4] = measpp[k, 1]
                             u0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.
                             u2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000.
-                            u = np.max([u0, u2]) * (np.heaviside(u0 - u2, 1.) * 2 - 1.)
+                            u = np.max([u0, u2]) * (np.heaviside(u0 - u2, 1.) * 2 - 1.) - self.vmn_offset
                             measpp[k, 1] = u
                             measpp[k, 3] = u0
                             measpp[k, 4] = u2 * -1.0
