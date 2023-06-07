@@ -36,6 +36,7 @@ try:
     from adafruit_ads1x15.analog_in import AnalogIn  # noqa
     from adafruit_mcp230xx.mcp23008 import MCP23008  # noqa
     from adafruit_mcp230xx.mcp23017 import MCP23017  # noqa
+    from adafruit_extended_bus import ExtendedI2C
     import digitalio  # noqa
     from digitalio import Direction  # noqa
     from gpiozero import CPUTemperature  # noqa
@@ -100,7 +101,8 @@ class OhmPi(object):
             'nb_meas': 1,
             'sequence_delay': 1,
             'nb_stack': 1,
-            'export_path': 'data/measurement.csv'
+            'export_path': 'data/measurement.csv',
+            'tx_volt': 5
         }
         # read in acquisition settings
         if settings is not None:
@@ -118,6 +120,10 @@ class OhmPi(object):
         if self.on_pi:
             # activation of I2C protocol
             self.i2c = busio.I2C(board.SCL, board.SDA)  # noqa
+            if self.i2c_mux_address == 2:
+                self.i2c_mux = self.i2c
+            else:
+                self.i2c_mux = ExtendedI2C(self.i2c_mux_address)
 
             # I2C connexion to MCP23008, for current injection
             self.mcp_board = MCP23008(self.i2c, address=self.mcp_board_address)
@@ -150,7 +156,7 @@ class OhmPi(object):
                 self.DPS.debug = False  #
                 self.DPS.serial.parity = 'N'  # No parity
                 self.DPS.mode = minimalmodbus.MODE_RTU  # RTU mode
-                self.DPS.write_register(0x0001, 1000, 0)  # max current allowed (100 mA for relays)
+                self.DPS.write_register(0x0001, 200, 0)  # max current allowed (100 mA for relays)
                 # (last number) 0 is for mA, 3 is for A
 
                 #self.soh_logger.debug(f'Battery voltage: {self.DPS.read_register(0x05,2 ):.3f}') TODO: SOH logger
@@ -225,7 +231,7 @@ class OhmPi(object):
 
     @staticmethod
     
-    def append_and_save_new(filename: str, last_measurement: dict, cmd_id=None):
+    def append_and_save(filename: str, last_measurement: dict, cmd_id=None):
         """Appends and saves the last measurement dict.
 
         Parameters
@@ -755,6 +761,7 @@ class OhmPi(object):
         self.board_version = OHMPI_CONFIG['board_version']
         self.mcp_board_address = OHMPI_CONFIG['mcp_board_address']
         self.exec_logger.debug(f'OHMPI_CONFIG = {str(OHMPI_CONFIG)}')
+        self.i2c_mux_address = OHMPI_CONFIG['i2c_mux_address']
 
     def read_quad(self, **kwargs):
         warnings.warn('This function is deprecated. Use load_sequence instead.', DeprecationWarning)
@@ -791,7 +798,7 @@ class OhmPi(object):
             self.exec_logger.warning('Not on Raspberry Pi, skipping reboot...')
 
     def run_measurement(self, quad=None, nb_stack=None, injection_duration=None,
-                        autogain=True, strategy='constant', tx_volt=5, best_tx_injtime=0.1, duty_cycle=0.5,
+                        autogain=True, strategy='constant', tx_volt=None, best_tx_injtime=0.1, duty_cycle=0.5,
                         cmd_id=None):
         """Measures on a quadrupole and returns transfer resistance.
 
@@ -837,6 +844,8 @@ class OhmPi(object):
                 nb_stack = self.settings['nb_stack']
             if injection_duration is None:
                 injection_duration = self.settings['injection_duration']
+            if tx_volt is None :
+                tx_volt = self.settings['tx_volt']
             tx_volt = float(tx_volt)
 
             # inner variable initialization
@@ -1065,7 +1074,7 @@ class OhmPi(object):
                             u = np.max([u0, u2]) * (np.heaviside(u0 - u2, 1.) * 2 - 1.)
                             measpp[k, 1] = u
                             measpp[k, 3] = u0
-                            measpp[k, 4] = u2*-1.0
+                            measpp[k, 4] = u2 * -1.0
                         elif self.board_version == '22.10':
                             measpp[k, 1] = -AnalogIn(self.ads_voltage, ads.P0, ads.P1).voltage * self.coef_p2 * 1000.
                         else:
