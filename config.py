@@ -20,7 +20,7 @@ OHMPI_CONFIG = {
     'nb_samples': 20,  # Max value 10 # was named integer before...
     'version': 2,  # Is this still needed?
     'max_elec': 64,
-    'board_addresses': {'A': 0x73, 'B': 0x72, 'M': 0x71, 'N': 0x70},  # CHECK IF YOUR BOARDS HAVE THESE ADDRESSES
+    'board_addresses': {'A': 0x70, 'B': 0x71, 'M': 0x72, 'N': 0x73},  # CHECK IF YOUR BOARDS HAVE THESE ADDRESSES
     'settings': 'ohmpi_settings.json',  # INSERT YOUR FAVORITE SETTINGS FILE HERE
     'board_version': 'mb.2023.0.0',#,'22.10',
     'mcp_board_address': 0x21,
