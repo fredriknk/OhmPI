@@ -379,12 +379,10 @@ class OhmPi(object):
                     break
         
                 # set voltage for test
+                self.DPS.write_register(0x0000, volt, 2)
                 if count==1:
-                    self.DPS.write_register(0x0000, volt, 2)
                     self.DPS.write_register(0x09, 1)  # DPS5005 on
                     # inject for given tx time
-                print(volt)
-                self.DPS.write_register(0x0000, volt, 2)
                 time.sleep(best_tx_injtime)
                 self.ads_current = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_current_address)
                 self.ads_current.mode = Mode.CONTINUOUS
@@ -394,7 +392,6 @@ class OhmPi(object):
                 I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt  # noqa measure current
                 U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.  # noqa measure voltage
                 U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000.  # noqa
-                time.sleep(best_tx_injtime)
 
                 # check polarity
                 polarity = 1  # by default, we guessed it right
@@ -491,7 +488,9 @@ class OhmPi(object):
                     break
 
             vab = volt
-
+        else:
+            self.exec_logger.info("Injection strategy not recognised...")
+        time.sleep(best_tx_injtime)
         self.DPS.write_register(0x09, 0) # DPS5005 off
         # print('polarity', polarity)
         self.pin0.value = False
