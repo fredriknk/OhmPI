@@ -446,16 +446,9 @@ class OhmPi(object):
                     self.DPS.write_register(0x09, 1)  # DPS5005 on
                 time.sleep(best_tx_injtime)  # inject for given tx time
                 self.ads_current = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_current_address)
+                self.ads_current.mode = Mode.CONTINUOUS
                 self.ads_voltage = ads.ADS1115(self.i2c, gain=2 / 3, data_rate=860, address=self.ads_voltage_address)
-                # autogain
-                if autogain:
-                    gain_current = self._gain_auto(AnalogIn(self.ads_current, ads.P0))
-                    gain_voltage0 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P0))
-                    gain_voltage2 = self._gain_auto(AnalogIn(self.ads_voltage, ads.P2))
-                    gain_voltage = np.min([gain_voltage0, gain_voltage2])  #TODO: separate gain for P0 and P2
-                    self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860, address=self.ads_current_address)
-                    self.ads_voltage = ads.ADS1115(self.i2c, gain=gain_voltage, data_rate=860, address=self.ads_voltage_address)
-                # we measure the voltage on both A0 and A2 to guess the polarity
+                self.ads_voltage.mode = Mode.CONTINUOUS                # we measure the voltage on both A0 and A2 to guess the polarity
                 I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt  # noqa measure current
                 U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.  # noqa measure voltage
                 U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000.  # noqa
@@ -504,7 +497,6 @@ class OhmPi(object):
         # self.DPS.write_register(0x09, 0) # DPS5005 off
         self.pin0.value = False
         self.pin1.value = False
-        print(vab)
         return vab, polarity, Rab
 
     @staticmethod
