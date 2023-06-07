@@ -1182,7 +1182,7 @@ class OhmPi(object):
                 "R [ohm]": sum_vmn / sum_i,
                 "Ps [mV]": sum_ps / (2 * nb_stack),
                 "nbStack": nb_stack,
-                "Tx [V]": tx_volt if not out_of_range else 0.,
+                "Vab [V]": tx_volt if not out_of_range else 0.,
                 "CPU temp [degC]": CPUTemperature().temperature,
                 "Nb samples [-]": self.nb_samples,
                 "fulldata": fulldata,
@@ -1201,7 +1201,8 @@ class OhmPi(object):
                 "PS_per_stack [mV]": np.array(
                     [np.mean(np.mean(vmn_stack[i * 2:i * 2 + 2], axis=1)) for i in range(nb_stack)]),
                 "PS_stack [mV]": ps_stack_mean,
-                "R_ab [ohm]": Rab,
+                "Rab [ohm]": Rab,
+                "Pab [W]": tx_volt * i_stack_mean/1000.,
                 "Gain_Vmn": gain,
                 "Tx_battery [V]":self._read_battery_level()
             }
