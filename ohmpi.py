@@ -1402,7 +1402,10 @@ class OhmPi(object):
         self.status = 'idle'
 
         if plot_realtime_fulldata:
-            return fig,(ax1,ax2), (line1,line2), acquired_dataset
+            return fig,(ax1,ax2), (line1,line2), filename, acquired_dataset
+        else:
+            return filename
+        
     def run_sequence_async(self, cmd_id=None, **kwargs):
         """Runs the sequence in a separate thread. Can be stopped by 'OhmPi.interrupt()'.
             Additional arguments are passed to run_measurement().
@@ -1610,6 +1613,33 @@ class OhmPi(object):
                     self._switch_mux(quadrupole[i], 'on', roles[i])
         else:
             self.exec_logger.error('Not switching MUX : A == B -> short circuit risk detected!')
+    
+    def ohmpi_to_bert(self,fname,abmn_file,coord_file):
+        """Export data to BERT format.
+
+        Parameters
+        ----------
+        """
+        
+        abmn = np.loadtxt(abmn_file)
+        nbr_abmn = len(abmn)
+        data = np.loadtxt(fname, comments = '#', delimiter = ',',
+                converters = None, skiprows = 1, usecols = [1,2,3,4,6,7], unpack = False,
+                ndmin = 0, encoding = 'bytes', max_rows = None)
+        coord = np.loadtxt(coord_file)
+        with open(fname +'data.dat','w') as rho_data:
+            rho_data.write(str(len(coord)))
+            rho_data.write('\n')
+            rho_data.write('# x y z')
+            rho_data.write('\n')
+            np.savetxt(rho_data,coord,delimiter=' ',fmt='%1.3f')
+            rho_data.write(str(len(data)))
+            rho_data.write('\n')
+            rho_data.write('# a b m n u i ')
+            rho_data.write('\n')
+            np.savetxt(rho_data,data, fmt='%i %i %i %i %1.3f %1.3f')  
+        
+        
 
     def switch_mux_off(self, quadrupole, cmd_id=None):
         """Switches off multiplexer relays for given quadrupole.
