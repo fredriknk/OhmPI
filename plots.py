@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_fulldata(fulldata, axes=None, fig=None, save=False, output="fulldata.png", show=False, realtime=False, xlim=None):
+def plot_fulldata(fulldata, axes=None, fig=None, save=False, output="fulldata.png", show=False, realtime=False,
+                  xlim=None, plot_ads=False):
 
     if axes is None:
         fig, (ax1,ax2) = plt.subplots(2, sharex=True)
@@ -34,7 +35,7 @@ def plot_fulldata(fulldata, axes=None, fig=None, save=False, output="fulldata.pn
         return fig, (ax1, ax2)
 
 
-def update_realtime_fulldata_plot(last_measurement, acquired_dataset, lines, axes, fig, x_window=10):
+def update_realtime_fulldata_plot(last_measurement, acquired_dataset, lines, axes, fig, x_window=10, plot_ads=False):
     (line1, line2) = lines
     (ax1,ax2) = axes
     t = np.append(acquired_dataset[:,2], last_measurement[:, 2][~np.isnan(last_measurement[:, 2])] + acquired_dataset[:,2][-1])
