@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 created on January 6, 2020.
-Updates dec 2022.
+Updates may 2023.
 Hardware: Licensed under CERN-OHL-S v2 or any later version
 Software: Licensed under the GNU General Public License v3.0
 Ohmpi.py is a program to control a low-cost and open hardware resistivity meter OhmPi that has been developed by
@@ -1614,6 +1614,30 @@ class OhmPi(object):
         for i in range(0, 4):
             if quadrupole[i] > 0:
                 self._switch_mux(quadrupole[i], 'off', roles[i])
+
+    def test_led(self):
+        """Interactive method to test the multiplexer."""
+        self.mcp_board = MCP23008(self.i2c, address=self.mcp_board_address)
+        self.pin4 = self.mcp_board.get_pin(4) # Ohmpi_run
+        self.pin4.direction = Direction.OUTPUT
+        self.pin5 = self.mcp_board.get_pin(5) # measurement_run
+        self.pin5.direction = Direction.OUTPUT
+        self.pin6 = self.mcp_board.get_pin(6) # stack_run
+        self.pin6.direction = Direction.OUTPUT
+        self.pin7 = self.mcp_board.get_pin(7) # battery_off
+        self.pin7.direction = Direction.OUTPUT
+        for i in range(30):
+            self.pin4.value = True
+            self.pin5.value = True
+            self.pin6.value = True
+            self.pin7.value = True
+            time.sleep(0.5)
+            self.pin4.value = False
+            self.pin5.value = False
+            self.pin6.value = False
+            self.pin7.value = False
+            time.sleep(0.5)
+            
 
     def test_mux(self, activation_time=1.0, address=0x70):
         """Interactive method to test the multiplexer.
