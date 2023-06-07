@@ -1626,12 +1626,17 @@ class OhmPi(object):
         self.pin6.direction = Direction.OUTPUT
         self.pin7 = self.mcp_board.get_pin(7) # battery_off
         self.pin7.direction = Direction.OUTPUT
+        print('led on test')
         for i in range(30):
+            print('Led on')
+            self.exec_logger.debug(f'Led on')
             self.pin4.value = True
             self.pin5.value = True
             self.pin6.value = True
             self.pin7.value = True
             time.sleep(0.5)
+            print('Led off')
+            self.exec_logger.debug(f'Led off')
             self.pin4.value = False
             self.pin5.value = False
             self.pin6.value = False
