@@ -23,7 +23,7 @@ OHMPI_CONFIG = {
     'board_addresses': {'A': 0x73, 'B': 0x72, 'M': 0x71, 'N': 0x70},  # CHECK IF YOUR BOARDS HAVE THESE ADDRESSES
     'settings': 'ohmpi_settings.json',  # INSERT YOUR FAVORITE SETTINGS FILE HERE
     'board_version': 'mb.2023.0.0',#,'22.10',
-    'mcp_board_address': 0x20,
+    'mcp_board_address': 0x21,
     'i2c_mux_address': 2  # 2 if on same bus as the measurement board, 4 if additional bus
 
 }  # TODO: add a dictionary with INA models and associated gain values
