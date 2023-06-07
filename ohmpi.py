@@ -102,8 +102,7 @@ class OhmPi(object):
             'nb_meas': 1,
             'sequence_delay': 1,
             'nb_stack': 1,
-            'export_dir': 'data',
-            'export_name': 'measurement.csv',
+            'export_path': 'data/measurement.csv',
             'tx_volt': 5
         }
         # read in acquisition settings
@@ -427,10 +426,10 @@ class OhmPi(object):
             factor = factor_I
             if factor_I > factor_vmn:
                 factor = factor_vmn
-            #print('factor', factor_I, factor_vmn)
             vab = factor * volt * 0.9
             if vab > tx_max:
                 vab = tx_max
+
         elif strategy == 'vmin':
             # implement different strategy
             I=20
@@ -801,7 +800,7 @@ class OhmPi(object):
 
     def run_measurement(self, quad=None, nb_stack=None, injection_duration=None,
                         autogain=True, strategy='constant', tx_volt=None, best_tx_injtime=0.1, duty_cycle=0.5,
-                        cmd_id=None, rs_check=False):
+                        cmd_id=None):
         """Measures on a quadrupole and returns transfer resistance.
 
         Parameters
@@ -1161,10 +1160,7 @@ class OhmPi(object):
             r_stack_std = np.sqrt((vmn_std / vmn_stack_mean) ** 2 + (i_std / i_stack_mean) ** 2) * r_stack_mean
             ps_stack_mean = np.mean(
                 np.array([np.mean(np.mean(vmn_stack[i * 2:i * 2 + 2], axis=1)) for i in range(nb_stack)]))
-            if self.idps:
-                tx_batt = self._read_battery_level()
-            else:
-                tx_batt = None
+
             # create a dictionary and compute averaged values from all stacks
             # if self.board_version == 'mb.2023.0.0':
             d = {
@@ -1176,7 +1172,7 @@ class OhmPi(object):
                 "inj time [ms]": (end_delay - start_delay) * 1000. if not out_of_range else 0.,
                 "Vmn [mV]": sum_vmn / (2 * nb_stack),
                 "I [mA]": sum_i / (2 * nb_stack),
-                "R [Ohm]": sum_vmn / sum_i,
+                "R [ohm]": sum_vmn / sum_i,
                 "Ps [mV]": sum_ps / (2 * nb_stack),
                 "nbStack": nb_stack,
                 "Vab [V]": tx_volt if not out_of_range else 0.,
@@ -1190,18 +1186,18 @@ class OhmPi(object):
                 "Vmn_std [mV]": vmn_std,
                 "Vmn_per_stack [mV]": np.array(
                     [np.diff(np.mean(vmn_stack[i * 2:i * 2 + 2], axis=1))[0] / 2 for i in range(nb_stack)]),
-                "R_stack [Ohm]": r_stack_mean,
-                "R_std [Ohm]": r_stack_std,
-                "R_per_stack [Ohm]": np.mean(
+                "R_stack [ohm]": r_stack_mean,
+                "R_std [ohm]": r_stack_std,
+                "R_per_stack [ohm]": np.mean(
                     [np.diff(np.mean(vmn_stack[i * 2:i * 2 + 2], axis=1)) / 2 for i in range(nb_stack)]) / np.array(
                     [np.mean(i_stack[i * 2:i * 2 + 2]) for i in range(nb_stack)]),
                 "PS_per_stack [mV]": np.array(
                     [np.mean(np.mean(vmn_stack[i * 2:i * 2 + 2], axis=1)) for i in range(nb_stack)]),
                 "PS_stack [mV]": ps_stack_mean,
-                "Rab [kOhm]": tx_volt / i_stack_mean ,
+                "Rab [ohm]": Rab,
                 "Pab [W]": tx_volt * i_stack_mean/1000.,
                 "Gain_Vmn": gain,
-                "Tx_battery [V]": tx_batt
+                "Tx_battery [V]":self._read_battery_level()
             }
             # print(np.array([(vmn_stack[i*2:i*2+2]) for i in range(nb_stack)]))
             # elif self.board_version == '22.10':
@@ -1225,7 +1221,7 @@ class OhmPi(object):
 
         else:  # for testing, generate random data
             d = {'time': datetime.now().isoformat(), 'A': quad[0], 'B': quad[1], 'M': quad[2], 'N': quad[3],
-                'R [Ohm]': np.abs(np.random.randn(1)).tolist()}
+                'R [ohm]': np.abs(np.random.randn(1)).tolist()}
 
         # to the data logger
         dd = d.copy()
@@ -1241,10 +1237,7 @@ class OhmPi(object):
                 dd[key] = np.round(dd[key], 3)
 
         dd['cmd_id'] = str(cmd_id)
-        if not rs_check:
-            self.data_logger.info(dd)
-        else:
-           self.data_logger.info(dict((k, dd[k]) for k in ('A', 'B', 'Rab [kOhm]')))
+        self.data_logger.info(dd)
         self.pin5.value = False  # IHM led on measurement off
         if self.sequence is None:
             self.switch_dps('off')
@@ -1315,8 +1308,8 @@ class OhmPi(object):
         
         
         # create filename with timestamp
-        filename = os.path.join(self.settings['export_dir'],self.settings['export_name']).replace(
-            '.csv', f'_{datetime.now().strftime("%Y%m%dT%H%M%S")}.csv')
+        filename = self.settings["export_path"].replace('.csv',
+                                                        f'_{datetime.now().strftime("%Y%m%dT%H%M%S")}.csv')
         self.exec_logger.debug(f'Saving to {filename}')
 
         # make sure all multiplexer are off
@@ -1401,7 +1394,10 @@ class OhmPi(object):
         self.status = 'idle'
 
         if plot_realtime_fulldata:
-            return fig,(ax1,ax2), (line1,line2), acquired_dataset
+            return fig,(ax1,ax2), (line1,line2), filename, acquired_dataset
+        else:
+            return filename
+        
     def run_sequence_async(self, cmd_id=None, **kwargs):
         """Runs the sequence in a separate thread. Can be stopped by 'OhmPi.interrupt()'.
             Additional arguments are passed to run_measurement().
@@ -1446,8 +1442,8 @@ class OhmPi(object):
             # as it has a smaller range of accepted voltage
 
         # create filename to store RS
-        export_path_rs = os.path.join(self.settings['export_dir'],'rs_' + self.settings['export_name']).replace(
-            '.csv', '') + '_' + datetime.now().strftime('%Y%m%dT%H%M%S') + '.csv'
+        export_path_rs = self.settings['export_path'].replace('.csv', '') \
+                         + '_' + datetime.now().strftime('%Y%m%dT%H%M%S') + '_rs.csv'
 
         # perform RS check
         # self.run = True
@@ -1456,24 +1452,13 @@ class OhmPi(object):
         if self.on_pi:
             # make sure all mux are off to start with
             self.reset_mux()
-            if self.idps:
-                # call the switch_mux function to switch to the right electrodes
-                # switch on DPS
-                self.mcp_board = MCP23008(self.i2c, address=self.mcp_board_address)
-                self.pin2 = self.mcp_board.get_pin(2) # dsp -
-                self.pin2.direction = Direction.OUTPUT
-                self.pin2.value = True
-                self.pin3 = self.mcp_board.get_pin(3) # dsp -
-                self.pin3.direction = Direction.OUTPUT
-                self.pin3.value = True
-                time.sleep (4)
 
             # measure all quad of the RS sequence
             for i in range(0, quads.shape[0]):
                 quad = quads[i, :]  # quadrupole
                 self.switch_mux_on(quad)  # put before raising the pins (otherwise conflict i2c)
-                d = self.run_measurement(quad=quad, nb_stack=1, injection_duration=0.2, tx_volt=tx_volt, autogain=True,
-                                         strategy='constant',rs_check=True)
+                d = self.run_measurement(quad=quad, nb_stack=1, injection_duration=0.2, tx_volt=tx_volt, autogain=False)
+
                 if self.idps:
                     voltage = tx_volt * 1000.  # imposed voltage on dps5005
                 else:
@@ -1506,8 +1491,6 @@ class OhmPi(object):
                 self.switch_mux_off(quad)
         else:
             pass
-        if self.idps:
-            self.switch_dps('off')
         self.status = 'idle'
 
     #
@@ -1622,6 +1605,35 @@ class OhmPi(object):
                     self._switch_mux(quadrupole[i], 'on', roles[i])
         else:
             self.exec_logger.error('Not switching MUX : A == B -> short circuit risk detected!')
+    
+    def ohmpi_to_bert(self,fname,abmn_file,coord_file):
+        """Export data to BERT format.
+
+        Parameters
+        ----------
+        """
+        
+        abmn = np.loadtxt(abmn_file)
+        nbr_abmn = len(abmn)
+        data = np.loadtxt(fname, comments = '#', delimiter = ',',
+                converters = None, skiprows = 1, usecols = [1,2,3,4,6,7], unpack = False,
+                ndmin = 0, encoding = 'bytes', max_rows = None)
+        coord = np.loadtxt(coord_file)
+        fname2 = fname[:-4]
+        
+        with open(fname2 +'.dat','w') as rho_data:
+            rho_data.write(str(len(coord)))
+            rho_data.write('\n')
+            rho_data.write('# x y z')
+            rho_data.write('\n')
+            np.savetxt(rho_data,coord,delimiter=' ',fmt='%1.3f')
+            rho_data.write(str(len(data)))
+            rho_data.write('\n')
+            rho_data.write('# a b m n u i ')
+            rho_data.write('\n')
+            np.savetxt(rho_data,data, fmt='%i %i %i %i %1.3f %1.3f')  
+        
+        
 
     def switch_mux_off(self, quadrupole, cmd_id=None):
         """Switches off multiplexer relays for given quadrupole.
@@ -1749,8 +1761,7 @@ class OhmPi(object):
             - nb_meas (total number of times the sequence will be run)
             - sequence_delay (delay in second between each sequence run)
             - nb_stack (number of stack for each quadrupole measurement)
-            - export_dir (directory where to export the data, timestamp will be added to filename)
-            - export_name (name of exported file)
+            - export_path (path where to export the data, timestamp will be added to filename)
 
         Parameters
         ----------
