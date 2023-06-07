@@ -102,7 +102,8 @@ class OhmPi(object):
             'nb_meas': 1,
             'sequence_delay': 1,
             'nb_stack': 1,
-            'export_path': 'data/measurement.csv',
+            'export_dir': 'data',
+            'export_name': 'measurement.csv',
             'tx_volt': 5
         }
         # read in acquisition settings
@@ -1322,8 +1323,8 @@ class OhmPi(object):
         
         
         # create filename with timestamp
-        filename = self.settings["export_path"].replace('.csv',
-                                                        f'_{datetime.now().strftime("%Y%m%dT%H%M%S")}.csv')
+        filename = os.path.join(self.settings['export_dir'],self.settings['export_name']).replace(
+            '.csv', f'_{datetime.now().strftime("%Y%m%dT%H%M%S")}.csv')
         self.exec_logger.debug(f'Saving to {filename}')
 
         # make sure all multiplexer are off
@@ -1453,8 +1454,8 @@ class OhmPi(object):
             # as it has a smaller range of accepted voltage
 
         # create filename to store RS
-        export_path_rs = self.settings['export_path'].replace('.csv', '') \
-                         + '_' + datetime.now().strftime('%Y%m%dT%H%M%S') + '_rs.csv'
+        export_path_rs = os.path.join(self.settings['export_dir'],'rs_' + self.settings['export_name']).replace(
+            '.csv', '') + '_' + datetime.now().strftime('%Y%m%dT%H%M%S') + '.csv'
 
         # perform RS check
         # self.run = True
@@ -1756,7 +1757,8 @@ class OhmPi(object):
             - nb_meas (total number of times the sequence will be run)
             - sequence_delay (delay in second between each sequence run)
             - nb_stack (number of stack for each quadrupole measurement)
-            - export_path (path where to export the data, timestamp will be added to filename)
+            - export_dir (directory where to export the data, timestamp will be added to filename)
+            - export_name (name of exported file)
 
         Parameters
         ----------
