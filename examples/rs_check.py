@@ -1,6 +1,8 @@
 from ohmpi import OhmPi
 import matplotlib.pyplot as plt
 import numpy as np
+os.chdir("/home/pi/OhmPi")
+sys.path.append("/home/pi/OhmPi")
 
 a = np.arange(13) + 1
 b = a + 3
