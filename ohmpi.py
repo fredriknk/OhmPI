@@ -762,6 +762,7 @@ class OhmPi(object):
         self.mcp_board_address = OHMPI_CONFIG['mcp_board_address']
         self.exec_logger.debug(f'OHMPI_CONFIG = {str(OHMPI_CONFIG)}')
         self.i2c_mux_address = OHMPI_CONFIG['i2c_mux_address']
+        self.vmn_offset = OHMPI_CONFIG['vmn_offset']
 
     def read_quad(self, **kwargs):
         warnings.warn('This function is deprecated. Use load_sequence instead.', DeprecationWarning)
