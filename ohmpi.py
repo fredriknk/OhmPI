@@ -103,7 +103,8 @@ class OhmPi(object):
             'sequence_delay': 1,
             'nb_stack': 1,
             'export_path': 'data/measurement.csv',
-            'tx_volt': 5
+            'tx_volt': 5,
+            'strategy': 'constant'
         }
         # read in acquisition settings
         if settings is not None:
@@ -838,6 +839,8 @@ class OhmPi(object):
                 injection_duration = self.settings['injection_duration']
             if tx_volt is None :
                 tx_volt = self.settings['tx_volt']
+            if strategy is None:
+                strategy = self.settings['strategy']
             tx_volt = float(tx_volt)
 
             # inner variable initialization
@@ -1296,15 +1299,12 @@ class OhmPi(object):
         t0 = time.time()
         self.reset_mux()
         
-        
-        
         # create filename with timestamp
         filename = self.settings["export_path"].replace('.csv',
                                                         f'_{datetime.now().strftime("%Y%m%dT%H%M%S")}.csv')
         self.exec_logger.debug(f'Saving to {filename}')
 
         # make sure all multiplexer are off
-        
 
         # measure all quadrupole of the sequence
         if self.sequence is None:
@@ -1385,7 +1385,7 @@ class OhmPi(object):
         self.status = 'idle'
 
         if plot_realtime_fulldata:
-            return fig,(ax1,ax2), (line1,line2), filename, acquired_dataset
+            return fig,(ax1,ax2), lines, filename, acquired_dataset
         else:
             return filename
         
