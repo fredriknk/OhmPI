@@ -102,6 +102,7 @@ class OhmPi(object):
             'nb_meas': 1,
             'sequence_delay': 1,
             'nb_stack': 1,
+            'sampling_interval': 2,
             'export_dir': 'data',
             'export_name': 'measurement.csv',
             'tx_volt': 5,
@@ -791,7 +792,7 @@ class OhmPi(object):
         else:
             self.exec_logger.warning('Not on Raspberry Pi, skipping reboot...')
 
-    def run_measurement(self, quad=None, nb_stack=None, injection_duration=None,
+    def run_measurement(self, quad=None, nb_stack=None, injection_duration=None, sampling_interval=None,
                         autogain=True, strategy='constant', tx_volt=None, best_tx_injtime=0.1, duty_cycle=0.5,
                         cmd_id=None, rs_check=False):
         """Measures on a quadrupole and returns transfer resistance.
@@ -842,6 +843,8 @@ class OhmPi(object):
                 tx_volt = self.settings['tx_volt']
             if strategy is None:
                 strategy = self.settings['strategy']
+            if sampling_interval is None:
+                sampling_interval = self.settings['sampling_interval']
             tx_volt = float(tx_volt)
 
             # inner variable initialization
@@ -975,7 +978,7 @@ class OhmPi(object):
                 pinMN = 0 if polarity > 0 else 2  # noqa
 
                 # sampling for each stack at the end of the injection
-                sampling_interval = 2  # ms    # TODO: make this a config option
+                #sampling_interval = 2  # ms
                 self.nb_samples = int(injection_duration * 1000 // sampling_interval) + 1  # TODO: check this strategy
 
                 # full data for waveform
@@ -1082,7 +1085,6 @@ class OhmPi(object):
                             break
 
                     end_delay_off = time.time()
-
                     # truncate the meas array if we didn't fill the last samples
                     measpp = measpp[:k + 1]
 
@@ -1644,7 +1646,7 @@ class OhmPi(object):
             rho_data.write('# a b m n u i ')
             rho_data.write('\n')
             np.savetxt(rho_data,data, fmt='%i %i %i %i %1.3f %1.3f')  
-        
+
     def switch_mux_off(self, quadrupole, cmd_id=None):
         """Switches off multiplexer relays for given quadrupole.
 
@@ -1768,9 +1770,11 @@ class OhmPi(object):
         Parameters can be:
             - nb_electrodes (number of electrode used, if 4, no MUX needed)
             - injection_duration (in seconds)
+            - sampling_interval (in ms)
             - nb_meas (total number of times the sequence will be run)
             - sequence_delay (delay in second between each sequence run)
             - nb_stack (number of stack for each quadrupole measurement)
+            - strategy (injection strategy: constant, vmax, vmin)
             - export_dir (directory where to export the data, timestamp will be added to filename)
             - export_name (name of exported file)
 
