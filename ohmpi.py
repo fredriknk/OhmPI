@@ -106,6 +106,7 @@ class OhmPi(object):
             'export_dir': 'data',
             'export_name': 'measurement.csv',
             'tx_volt': 5,
+            'duty_cycle': 0.5,
             'strategy': 'constant'
         }
         # read in acquisition settings
@@ -405,7 +406,7 @@ class OhmPi(object):
                     
             n = 0
             while (abs(vmn) > voltage_max or I > current_max) and volt>0:  #If starting voltage is too high, need to lower it down
-                print('we are out of range! so decreasing volt')
+                # print('we are out of range! so decreasing volt')
                 volt = volt - 2
                 self.DPS.write_register(0x0000, volt, 2)
                 #self.DPS.write_register(0x09, 1)  # DPS5005 on
@@ -438,7 +439,6 @@ class OhmPi(object):
             while I > 10 or abs(vmn) > 300 :  #TODO: hardware related - place in config
                 if count > 0 :
                     volt = volt - 2
-                print(volt, count)
                 count=count+1
                 if volt > 50:
                     break
@@ -793,7 +793,7 @@ class OhmPi(object):
             self.exec_logger.warning('Not on Raspberry Pi, skipping reboot...')
 
     def run_measurement(self, quad=None, nb_stack=None, injection_duration=None, sampling_interval=None,
-                        autogain=True, strategy='constant', tx_volt=None, best_tx_injtime=0.1, duty_cycle=0.5,
+                        autogain=True, strategy='constant', tx_volt=None, best_tx_injtime=0.1, duty_cycle=None,
                         cmd_id=None, rs_check=False):
         """Measures on a quadrupole and returns transfer resistance.
 
@@ -845,6 +845,8 @@ class OhmPi(object):
                 strategy = self.settings['strategy']
             if sampling_interval is None:
                 sampling_interval = self.settings['sampling_interval']
+            if duty_cycle is None:
+                duty_cycle = self.settings['duty_cycle']
             tx_volt = float(tx_volt)
 
             # inner variable initialization
@@ -924,7 +926,7 @@ class OhmPi(object):
                 gain = 2 / 3
                 self.ads_voltage = ads.ADS1115(self.i2c, gain=gain, data_rate=860,
                                             address=self.ads_voltage_address)
-                self.ads_voltage.mode= Mode.CONTINUOUS 
+                self.ads_voltage.mode = Mode.CONTINUOUS
                 if autogain:
                     # compute autogain
                     gain_voltage = []
@@ -969,7 +971,7 @@ class OhmPi(object):
                                         f'{gain_voltage[1]:.3f}')
                     self.ads_current = ads.ADS1115(self.i2c, gain=gain_current, data_rate=860,
                                                 address=self.ads_current_address)
-                    self.ads_current.mode= Mode.CONTINUOUS
+                    self.ads_current.mode = Mode.CONTINUOUS
 
                 self.pin0.value = False
                 self.pin1.value = False
@@ -979,8 +981,9 @@ class OhmPi(object):
 
                 # sampling for each stack at the end of the injection
                 #sampling_interval = 2  # ms
+                sampling_interval = np.max([10,sampling_interval])
                 self.nb_samples = int(injection_duration * 1000 // sampling_interval) + 1  # TODO: check this strategy
-
+                #sampling_interval = sampling_interval - 9.5
                 # full data for waveform
                 fulldata = []
 
@@ -994,17 +997,17 @@ class OhmPi(object):
                     if (n % 2) == 0:
                         self.pin0.value = True
                         self.pin1.value = False
-                        if autogain:  # select gain computed on first half cycle
-                            self.ads_voltage = ads.ADS1115(self.i2c, gain=np.min(gain_voltage), data_rate=860,
-                                                        address=self.ads_voltage_address)
-                            self.ads_voltage.mode= Mode.CONTINUOUS 
+                        # if autogain:  # select gain computed on first half cycle
+                        #     self.ads_voltage = ads.ADS1115(self.i2c, gain=np.min(gain_voltage), data_rate=860,
+                        #                                 address=self.ads_voltage_address)
+                        #     self.ads_voltage.mode = Mode.CONTINUOUS
                     else:
                         self.pin0.value = False
                         self.pin1.value = True  # current injection nr2
-                        if autogain:  # select gain computed on first half cycle
-                            self.ads_voltage = ads.ADS1115(self.i2c, gain=np.min(gain_voltage), data_rate=860,
-                                                        address=self.ads_voltage_address)
-                            self.ads_voltage.mode= Mode.CONTINUOUS 
+                    if autogain:  # select gain computed on first half cycle
+                        self.ads_voltage = ads.ADS1115(self.i2c, gain=np.min(gain_voltage), data_rate=860,
+                                                    address=self.ads_voltage_address)
+                        self.ads_voltage.mode= Mode.CONTINUOUS
                     self.exec_logger.debug(f'Stack {n} {self.pin0.value} {self.pin1.value}')
                     if self.board_version == 'mb.2023.0.0':
                         self.pin6.value = True  # IHM current injection led on
@@ -1035,8 +1038,13 @@ class OhmPi(object):
                             meas[k, 1] = -AnalogIn(self.ads_voltage, ads.P0, ads.P1).voltage * self.coef_p2 * 1000
                         # else:
                         #    self.exec_logger.debug('Unknown board')
-                        time.sleep(sampling_interval / 1000)
+                        # time.sleep(sampling_interval / 1000)
+                        dt_i = dt
                         dt = time.time() - start_delay  # real injection time (s)
+                        dt_i = dt - dt_i
+                        time.sleep(np.max([0, sampling_interval / 1000 - dt_i])) #check if needs to add sleep time to reach sampling interval
+                        dt = time.time() - start_delay  # real injection time (s)
+
                         meas[k, 2] = time.time() - start_time
                         if dt > (injection_duration - 0 * sampling_interval / 1000.):
                             break
@@ -1052,8 +1060,9 @@ class OhmPi(object):
                     meas = meas[:k + 1]
 
                     # measurement of current i and voltage u during off time
+                    duty_cycle = np.min([duty_cycle,0.95]) # to avoid shortage
                     measpp = np.zeros((int(meas.shape[0] * (1 / duty_cycle - 1)), 5)) * np.nan
-                    time.sleep(sampling_interval / 1000)
+                    #time.sleep(sampling_interval / 1000)
                     start_delay_off = time.time()  # stating measurement time
                     dt = 0
                     for k in range(0, measpp.shape[0]):
@@ -1070,7 +1079,7 @@ class OhmPi(object):
                             #     measpp[k, 4] = measpp[k, 1]
                             u0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.
                             u2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000.
-                            u = np.max([u0, u2]) * (np.heaviside(u0 - u2, 1.) * 2 - 1.) - self.vmn_offset
+                            u = np.max([u0, u2]) * (np.heaviside(u0 - 2, 1.) * 2 - 1.) - self.vmn_offset
                             measpp[k, 1] = u
                             measpp[k, 3] = u0
                             measpp[k, 4] = u2 * -1.0
@@ -1078,12 +1087,15 @@ class OhmPi(object):
                             measpp[k, 1] = -AnalogIn(self.ads_voltage, ads.P0, ads.P1).voltage * self.coef_p2 * 1000.
                         else:
                             self.exec_logger.debug('unknown board')
-                        time.sleep(sampling_interval / 1000)
+                        # time.sleep(sampling_interval / 1000)
+                        dt_i = dt
+                        dt = time.time() - start_delay_off  # real injection time (s)
+                        dt_i = dt - dt_i
+                        time.sleep(np.max([0, sampling_interval / 1000 - dt_i]))
                         dt = time.time() - start_delay_off  # real injection time (s)
                         measpp[k, 2] = time.time() - start_time
                         if dt > (injection_duration - 0 * sampling_interval / 1000.):
                             break
-
                     end_delay_off = time.time()
                     # truncate the meas array if we didn't fill the last samples
                     measpp = measpp[:k + 1]
@@ -1775,6 +1787,7 @@ class OhmPi(object):
             - sequence_delay (delay in second between each sequence run)
             - nb_stack (number of stack for each quadrupole measurement)
             - strategy (injection strategy: constant, vmax, vmin)
+            - duty_cycle (injection duty cycle comprised between 0.5 - 1)
             - export_dir (directory where to export the data, timestamp will be added to filename)
             - export_name (name of exported file)
 
