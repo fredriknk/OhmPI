@@ -990,6 +990,10 @@ class OhmPi(object):
                 # full data for waveform
                 fulldata = []
 
+                #------- calcul -----#
+                M = []
+                ######################
+
                 #  we sample every 10 ms (as using AnalogIn for both current
                 # and voltage takes about 7 ms). When we go over the injection
                 # duration, we break the loop and truncate the meas arrays
@@ -1103,6 +1107,13 @@ class OhmPi(object):
                     # truncate the meas array if we didn't fill the last samples
                     measpp = measpp[:k + 1]
 
+                    # TEMP: calcul chargeabilite #
+                    out_1 = measpp[:,1]
+                    out_2 = out_1 - out_1[-1]
+                    M[n] = 1/(meas[-3,1]-measpp[-1,1]) * np.trapz(x=measpp[:,2], y=out_2)
+
+                    #----------------------------#
+
                     # we alternate on which ADS1115 pin we measure because of sign of voltage
                     if pinMN == 0:
                         pinMN = 2  # noqa
@@ -1176,6 +1187,11 @@ class OhmPi(object):
             else:
                 tx_batt = None
 
+            ##### Chargeability ######
+
+            Chargeability = np.mean(M)
+            ########################
+
             # create a dictionary and compute averaged values from all stacks
             # if self.board_version == 'mb.2023.0.0':
             d = {
@@ -1212,7 +1228,10 @@ class OhmPi(object):
                 "Rab [kOhm]": tx_volt / i_stack_mean ,
                 "Pab [W]": tx_volt * i_stack_mean/1000.,
                 "Gain_Vmn": gain,
-                "Tx_battery [V]": tx_batt
+                "Tx_battery [V]": tx_batt,
+                # chargeability
+                "Chargeability [mV/V]": Chargeability
+                ####################
             }
             # print(np.array([(vmn_stack[i*2:i*2+2]) for i in range(nb_stack)]))
             # elif self.board_version == '22.10':
