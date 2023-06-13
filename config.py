@@ -25,7 +25,9 @@ OHMPI_CONFIG = {
     'board_version': 'mb.2023.0.0',#,'22.10',
     'mcp_board_address': 0x21,
     'i2c_mux_address': 2,  # 2 if on same bus as the measurement board, 4 if additional bus
-    'vmn_offset': 29
+    'vmn_offset': 29,
+    'U0_factor': 1, # scaling factor for the ads channel U0 voltage
+    'U2_factor': 1 # scaling factor for the ads channel U2 voltage
 }  # TODO: add a dictionary with INA models and associated gain values
 
 # SET THE LOGGING LEVELS, MQTT BROKERS AND MQTT OPTIONS ACCORDING TO YOUR NEEDS
