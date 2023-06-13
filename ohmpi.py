@@ -359,8 +359,8 @@ class OhmPi(object):
                 self.ads_voltage = ads.ADS1115(self.i2c, gain=gain_voltage, data_rate=860, address=self.ads_voltage_address)
             # we measure the voltage on both A0 and A2 to guess the polarity
             I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt  # noqa measure current
-            U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor  # noqa measure voltage
-            U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor # noqa
+            U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor + self.U0_offset  # noqa measure voltage
+            U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor + self.U2_offset # noqa
             # check polarity
             polarity = 1  # by default, we guessed it right
             vmn = U0
@@ -394,8 +394,8 @@ class OhmPi(object):
                 self.ads_voltage.mode = Mode.CONTINUOUS
                 # No need to use autogain to save time
                 I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt  # noqa measure current
-                U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor # noqa measure voltage
-                U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor # noqa
+                U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor + self.U0_offset # noqa measure voltage
+                U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor + self.U2_offset # noqa
 
                 # check polarity
                 polarity = 1  # by default, we guessed it right
@@ -411,8 +411,8 @@ class OhmPi(object):
                 self.DPS.write_register(0x0000, volt, 2)
                 #self.DPS.write_register(0x09, 1)  # DPS5005 on
                 I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt
-                U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor
-                U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor
+                U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor + self.U0_offset
+                U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor + self.U2_offset
                 polarity = 1  # by default, we guessed it right
                 vmn = U0
                 if U0 < 0:  # we guessed it wrong, let's use a correction factor
@@ -472,8 +472,8 @@ class OhmPi(object):
                 #self.DPS.write_register(0x09, 1)  # DPS5005 on
                 #time.sleep(best_tx_injtime)
                 I = AnalogIn(self.ads_current, ads.P0).voltage * 1000. / 50 / self.r_shunt
-                U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor
-                U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor
+                U0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor + self.U0_offset
+                U2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor + self.U2_offset
                 polarity = 1  # by default, we guessed it right
                 vmn = U0
                 if U0 < 0:  # we guessed it wrong, let's use a correction factor
@@ -753,7 +753,8 @@ class OhmPi(object):
         self.mcp_board_address = OHMPI_CONFIG['mcp_board_address']
         self.exec_logger.debug(f'OHMPI_CONFIG = {str(OHMPI_CONFIG)}')
         self.i2c_mux_address = OHMPI_CONFIG['i2c_mux_address']
-        self.vmn_offset = OHMPI_CONFIG['vmn_offset']
+        self.U0_offset = OHMPI_CONFIG['U0_offset']
+        self.U2_offset = OHMPI_CONFIG['U2_offset']
         self.U0_factor = OHMPI_CONFIG['U0_factor']
         self.U2_factor = OHMPI_CONFIG['U2_factor']
 
@@ -1030,9 +1031,9 @@ class OhmPi(object):
                             #     meas[k, 1] = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * -1.0
                             #     meas[k, 4] = meas[k, 1]
                             #     meas[k, 3] = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.
-                            u0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor
-                            u2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor
-                            u = np.max([u0, u2]) * (np.heaviside(u0 - u2, 1.) * 2 - 1.) - self.vmn_offset
+                            u0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor + self.U0_offset
+                            u2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor + self.U2_offset
+                            u = np.max([u0, u2]) * (np.heaviside(u0 - u2, 1.) * 2 - 1.)
                             meas[k, 1] = u
                             meas[k, 3] = u0
                             meas[k, 4] = u2 *-1.0
@@ -1079,9 +1080,9 @@ class OhmPi(object):
                             #     measpp[k, 3] = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000.
                             #     measpp[k, 1] = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * -1.0
                             #     measpp[k, 4] = measpp[k, 1]
-                            u0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor
-                            u2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor
-                            u = np.max([u0, u2]) * (np.heaviside(u0 - 2, 1.) * 2 - 1.) - self.vmn_offset
+                            u0 = AnalogIn(self.ads_voltage, ads.P0).voltage * 1000. * self.U0_factor + self.U0_offset
+                            u2 = AnalogIn(self.ads_voltage, ads.P2).voltage * 1000. * self.U2_factor + self.U2_offset
+                            u = np.max([u0, u2]) * (np.heaviside(u0 - 2, 1.) * 2 - 1.)
                             measpp[k, 1] = u
                             measpp[k, 3] = u0
                             measpp[k, 4] = u2 * -1.0
